@@ -1,0 +1,88 @@
+<div class="hitched-signup">
+    <div class="row">
+        <div class="col-sm-12 modalHeader">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close()">&times;</button>
+            <h2>Sign Up</h2>
+        </div>
+        <div class="col-sm-12">
+            <form class="form" name="form" ng-submit="register(form)" novalidate>
+
+                <div class="form-group" ng-class="{ 'has-success': form.name.$valid && submitted,
+                                            'has-error': form.name.$invalid && submitted }">
+                    <label>Name</label>
+
+                    <input type="text" name="name" class="form-control" ng-model="user.name" required/>
+                    <p class="help-block" ng-show="form.name.$error.required && submitted">
+                        A name is required
+                    </p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-success': form.email.$valid && submitted,
+                                            'has-error': form.email.$invalid && submitted }">
+                    <label>Email</label>
+
+                    <input type="email" name="email" class="form-control" ng-model="user.email" required mongoose-error/>
+                    <p class="help-block" ng-show="form.email.$error.email && submitted">
+                        Doesn't look like a valid email.
+                    </p>
+                    <p class="help-block" ng-show="form.email.$error.required && submitted">
+                        What's your email address?
+                    </p>
+                    <p class="help-block" ng-show="form.email.$error.mongoose">
+                        {{ errors.email }}
+                    </p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
+                                            'has-error': form.password.$invalid && submitted }">
+                    <label>Password</label>
+
+                    <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="3" required mongoose-error/>
+                    <p class="help-block" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
+                        Password must be at least 3 characters.
+                    </p>
+                    <p class="help-block" ng-show="form.password.$error.mongoose">
+                        {{ errors.password }}
+                    </p>
+                </div>
+
+                <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
+                                            'has-error': form.password.$invalid && submitted }">
+                    <label>Confirm Password</label>
+
+                    <input type="password" name="passwordConfirm" class="form-control" ng-model="user.passwordConfirm" ng-minlength="3" required mongoose-error/>
+                    <p class="help-block" ng-show="">
+                        Passwords must match!
+                    </p>
+                </div>
+
+                <div>
+                    <button class="btn btn-inverse btn-lg btn-login" type="submit">
+                        Sign up
+                    </button>
+                </div>
+
+                <hr>
+                <div>
+                    <a class="btn btn-facebook" href="" ng-click="loginOauth('facebook')">
+                        <i class="fa fa-facebook"></i> Connect with Facebook
+                    </a>
+                    <a class="btn btn-google-plus" href="" ng-click="loginOauth('google')">
+                        <i class="fa fa-google-plus"></i> Connect with Google+
+                    </a>
+                    <a class="btn btn-twitter" href="" ng-click="loginOauth('twitter')">
+                        <i class="fa fa-twitter"></i> Connect with Twitter
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <hr>Have an account? <a href="" ng-click="login()" class="text-center new-account">Log In</a>
+        </div>
+    </div>
+
+    <hr>
+</div>

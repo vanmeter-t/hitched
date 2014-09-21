@@ -1,0 +1,38 @@
+<div class="header" ng-controller="NavbarCtrl">
+    <ul class="nav nav-pills pull-right">
+
+        <!-- Guest -->
+        <li ng-hide="isLoggedIn()" ng-repeat="item in guest">
+            <a href="" ng-click="scrollTo(item.section)">{{item.title}}</a>
+        </li>
+        <li ng-hide="isLoggedIn()"><a href="" ng-click="open('login', 'LoginCtrl')">Login</a>
+        </li>
+        <li ng-hide="isLoggedIn()"><a href="" ng-click="open('signup', 'SignupCtrl')">Sign up</a>
+        </li>
+
+
+        <!-- Member -->
+        <div ng-show="isLoggedIn()" class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="memberDropDown" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user" />{{getCurrentUser().name}}
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="memberDropDown">
+                <li role="presentation" ng-repeat="item in member">
+                    <a href="{{item.link}}">
+                        <span class="glyphicon {{item.glyphicon}}" />{{item.title}}</a>
+                </li>
+                <li ng-show="isLoggedIn()" ng-class="{active: isActive('/settings')}">
+                    <a href="" ng-click="open('settings', 'SettingsCtrl')">
+                        <span class="glyphicon glyphicon-cog"></span>Settings</a>
+                </li>
+                <li class="divider"></li>
+                <li ng-show="isLoggedIn()" ng-class="{active: isActive('/logout')}"><a href="" ng-click="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </ul>
+    <h2 class="text-muted">The Hitched App</h2>
+</div>

@@ -1,0 +1,77 @@
+<div ng-controller="MainCtrl" id="mainWrapper">
+
+    <!-- Header Video/Into Media -->
+    <header id="header"></header>
+
+    <div id="social_share_buttons_id">
+        <div class="twitter_cls"></div>
+        <iframe class="fb_cls" src=""></iframe>
+        <div class="pinterest_wrapper_cls"></div>
+    </div>
+
+    <!-- Fixed navbar -->
+    <div ng-include="'components/navbar/navbar.html'" class="navbar navbar-inverse" id="nav" affix></div>
+
+    <!-- ABOUT APP -->
+    <div class="divider" id="aboutSection"></div>
+    <div ng-include="'app/guest/about'" class="container"></div>
+    <div class="divider"></div>
+
+    <!-- BACKGROUND 1 -->
+    <section class="bg-1">
+        <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+    </section>
+
+    <!-- GAMES -->
+    <div class="divider" id="gamesSection"></div>
+    <div ng-include="'app/guest/games'" class="row"></div>
+    <div class="divider"></div>
+
+    <!-- BACKGROUND 2 -->
+    <section class="bg-2">
+        <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+    </section>
+
+    <!-- PHOTOS -->
+    <div class="divider" id="photosSection"></div>
+    <div ng-include="'app/guest/photos'" class="row"></div>
+    <div class="divider"></div>
+
+    <!-- BACKGROUND 4 -->
+    <section class="bg-4">
+        <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+    </section>
+
+    <!-- GUEST LIST -->
+    <div class="divider" id="photosSection"></div>
+    <div ng-include="'app/guest/guests'" class="row"></div>
+    <div class="divider"></div>
+
+    <!-- BACKGROUND 5 -->
+    <section class="bg-5">
+        <div class="col-sm-6 col-sm-offset-3 text-center"></div>
+    </section>
+
+    <!-- CONTACT US FORM -->
+    <div class="divider" id="contactSection"></div>
+    <div ng-include="'app/guest/contact'" class="row"></div>
+    <div class="divider"></div>
+
+</div>
+
+<div id="footer">
+    <div class="container">
+        <p class="text-muted">The Hitched App - Copyright ©2014</p>
+    </div>
+</div>
+
+<ul id="scroll-top" class="nav pull-right scroll-top">
+    <li><a href="" ng-click="scrollTop()" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a>
+    </li>
+</ul>
+
+<script type="text/javascript">
+// on init, make the video header the height of the window 
+// so the user doesn't see the sections below 
+$("#header").css('height', $(window).height());
+</script>
