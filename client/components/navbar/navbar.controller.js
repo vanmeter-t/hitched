@@ -1,4 +1,5 @@
 'use strict';
+console.log('NavbarCtrl');
 
 angular.module('HitchedApp')
   .controller('NavbarCtrl', function($scope, $location, $modal, $log, Auth) {

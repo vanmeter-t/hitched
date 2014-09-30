@@ -8,14 +8,10 @@ var mongoose = require('mongoose'),
 * Wedding Schema
 */
 var WeddingSchema = new Schema({
-  first: {
-       name: String,
-       type: String
-  },
-  second: {
-       name: String,
-       type: String
-  },
+  firstName: String,
+  firstType: String, 
+  secondName: String,
+  secondType: String,
   dateTime: Date,
   unlockCode: String,
   location: { type: Schema.ObjectId, ref: 'Location' },
@@ -32,8 +28,10 @@ WeddingSchema
   .get(function() {
 
     return {
-      'first': this.first,
-      'second': this.second,
+      'firstName': this.firstName,
+      'firstType': this.firstType,
+      'secondName': this.secondName,
+      'secondType': this.secondType,
       'dateTime': this.dateTime,
       'unlockCode': this.unlockCode,
       'location': this.location,

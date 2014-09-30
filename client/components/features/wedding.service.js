@@ -41,7 +41,7 @@ angular.module('HitchedApp')
        */
       userWedding: function(id) {
         return Wedding.get({
-          weddingId: id
+          id: id
         });
       }
 
