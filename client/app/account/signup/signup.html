@@ -34,30 +34,30 @@
                 </div>
 
                 <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
-                                            'has-error': form.password.$invalid && submitted }">
+                                                    'has-error': form.password.$invalid && submitted }">
                     <label>Password</label>
 
-                    <input type="password" name="password" class="form-control" ng-model="user.password" ng-minlength="3" required mongoose-error/>
+                    <input type="password" id="password" name="password" class="form-control" ng-model="user.password" ng-minlength="5" required mongoose-error/>
                     <p class="help-block" ng-show="(form.password.$error.minlength || form.password.$error.required) && submitted">
-                        Password must be at least 3 characters.
+                        Password must be at least 5 characters.
                     </p>
                     <p class="help-block" ng-show="form.password.$error.mongoose">
                         {{ errors.password }}
                     </p>
                 </div>
 
-                <div class="form-group" ng-class="{ 'has-success': form.password.$valid && submitted,
-                                            'has-error': form.password.$invalid && submitted }">
+                <div class="form-group" ng-class="{ 'has-success': form.passwordConfirm.$valid && submitted,
+                                                    'has-error': form.passwordConfirm.$invalid && submitted }">
                     <label>Confirm Password</label>
 
-                    <input type="password" name="passwordConfirm" class="form-control" ng-model="user.passwordConfirm" ng-minlength="3" required mongoose-error/>
-                    <p class="help-block" ng-show="">
-                        Passwords must match!
+                    <input type="password" id="passwordConfirm" name="passwordConfirm" class="form-control" ng-model="user.passwordConfirm" ng-minlength="5" password-match="password" required mongoose-error/>
+                    <p class="help-block" ng-show="(form.passwordConfirm.$error.required || form.passwordConfirm.$error.noMatch) && form.passwordConfirm.$dirty">
+                        Passwords do not match.
                     </p>
                 </div>
 
                 <div>
-                    <button class="btn btn-inverse btn-lg btn-login" type="submit">
+                    <button class="btn btn-primary btn-lg btn-login" type="submit">
                         Sign up
                     </button>
                 </div>

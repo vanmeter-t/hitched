@@ -27,7 +27,7 @@ angular.module('HitchedApp')
     // Logout current user
     $scope.logout = function() {
       Auth.logout();
-      location.path('/');
+      $location.path('/');
     };
 
     // Scroll to section (for main page only)

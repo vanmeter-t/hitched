@@ -79,13 +79,12 @@ angular.module('HitchedApp')
        * @param  {Function} callback    - optional
        * @return {Promise}
        */
-      changePassword: function(oldPassword, newPassword, callback) {
+      changePassword: function(newPassword, callback) {
         var cb = callback || angular.noop;
 
         return User.changePassword({
           id: currentUser._id
         }, {
-          oldPassword: oldPassword,
           newPassword: newPassword
         }, function(user) {
           return cb(user);
@@ -105,6 +104,8 @@ angular.module('HitchedApp')
         var cb = callback || angular.noop;
 
         return User.changeEmail({
+          id: currentUser._id
+        }, {
           email: email
         }, function(user) {
           return cb(user);

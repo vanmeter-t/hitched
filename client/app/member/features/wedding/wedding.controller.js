@@ -30,6 +30,9 @@ angular.module('HitchedApp')
           $scope.submitted = false;
           $scope.editWedding = false;
 
+          // TODO: how to modify modal template?
+          // $scope.modalTitle = 'Success!';
+          // $scope.modalBody = 'Your wedding details have been saved!';
           var modalInstance = $modal.open({
             templateUrl: 'components/alert/alert.html',
             controller: 'AlertCtrl',

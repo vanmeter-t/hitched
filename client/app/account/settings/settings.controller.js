@@ -3,8 +3,14 @@
 angular.module('HitchedApp')
   .controller('SettingsCtrl', function($scope, $modalInstance, User, Auth) {
     $scope.errors = {};
+    $scope.success = false;
     $scope.emailSubmitted = false;
     $scope.passwordSubmitted = false;
+
+    // Get the wedding information
+    Auth.getCurrentUser().$promise.then(function(user) {
+      $scope.currentUser = user;
+    });
 
     $scope.close = function() {
       $modalInstance.close();
@@ -28,11 +34,13 @@ angular.module('HitchedApp')
           .then(function() {
             $scope.message = 'Email updated.';
             $scope.editEmail = false;
+            $scope.success = true;
           })
           .catch(function(err) {
             form.email.$setValidity('mongoose', false);
             $scope.errors.other = 'Issue with email';
             $scope.message = '';
+            $scope.success = false;
           });
       }
     };
@@ -40,15 +48,19 @@ angular.module('HitchedApp')
     $scope.changePassword = function(form) {
       $scope.passwordSubmitted = true;
       if (form.$valid) {
-        Auth.changePassword($scope.currentUser.password, $scope.currentUser.newPassword)
+        Auth.changePassword($scope.currentUser.password)
           .then(function() {
             $scope.message = 'Password successfully changed.';
             $scope.editPassword = false;
+            $scope.success = true;
+            delete $scope.currentUser.password;
+            delete $scope.currentUser.newPassword;
           })
           .catch(function() {
             form.password.$setValidity('mongoose', false);
-            $scope.errors.other = 'Incorrect password';
+            $scope.errors.other = 'Error: Password not saved.';
             $scope.message = '';
+            $scope.success = false;
           });
       }
     };

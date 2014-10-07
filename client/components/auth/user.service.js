@@ -14,7 +14,7 @@ angular.module('HitchedApp')
       changeEmail: {
         method: 'PUT',
         params: {
-          id: 'email'
+          controller: 'email'
         }
       },
       get: {
