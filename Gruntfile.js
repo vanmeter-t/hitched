@@ -65,7 +65,7 @@ module.exports = function (grunt) {
       },
       injectCss: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/*.css'
+          '<%= yeoman.client %>/{app,components,assets}/**/*.css'
         ],
         tasks: ['injector:css']
       },
@@ -82,12 +82,12 @@ module.exports = function (grunt) {
       },
       injectLess: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/*.less'],
+          '<%= yeoman.client %>/{app,components,assets}/**/*.less'],
         tasks: ['injector:less']
       },
       less: {
         files: [
-          '<%= yeoman.client %>/{app,components}/**/*.less'],
+          '<%= yeoman.client %>/{app,components,assets}/**/*.less'],
         tasks: ['less', 'autoprefixer']
       },
       gruntfile: {
@@ -95,7 +95,7 @@ module.exports = function (grunt) {
       },
       livereload: {
         files: [
-          '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.css',
+          '{.tmp,<%= yeoman.client %>}/{app,components,assets}/**/*.css',
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.html',
           '{.tmp,<%= yeoman.client %>}/{app,components}/**/*.js',
           '!{.tmp,<%= yeoman.client %>}{app,components}/**/*.spec.js',
@@ -375,7 +375,7 @@ module.exports = function (grunt) {
         expand: true,
         cwd: '<%= yeoman.client %>',
         dest: '.tmp/',
-        src: ['{app,components}/**/*.css']
+        src: ['{app,components,assets}/**/*.css']
       }
     },
 
@@ -517,7 +517,7 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.client %>/app/app.less': [
-            '<%= yeoman.client %>/{app,components}/**/*.less',
+            '<%= yeoman.client %>/{app,components,assets}/**/*.less',
             '!<%= yeoman.client %>/app/app.less'
           ]
         }
@@ -536,7 +536,7 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= yeoman.client %>/index.html': [
-            '<%= yeoman.client %>/{app,components}/**/*.css'
+            '<%= yeoman.client %>/{app,components,assets}/**/*.css'
           ]
         }
       }

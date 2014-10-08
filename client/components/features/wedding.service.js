@@ -4,11 +4,6 @@ angular.module('HitchedApp')
   .factory('Wedding', function($resource) {
     return $resource('/api/wedding/:id', {
       id: '@_id'
-    }, { //parameters default
-      update: {
-        method: 'PUT',
-        params: {}
-      }
     });
   })
   .factory('WeddingInfo', function WeddingInfo($location, $rootScope, Wedding) {
@@ -24,7 +19,7 @@ angular.module('HitchedApp')
       update: function(updateWedding, callback) {
         var cb = callback || angular.noop;
 
-        return Wedding.update(updateWedding, function() {
+        return Wedding.save(updateWedding, function() {
 
           return cb();
         }, function(err) {

@@ -1,5 +1,13 @@
 /* ---------------- CONTENT --------------- */
 
+@light-blue: #3c8dbc; //Primary
+@red: #f56954; //Danger
+@green: #00a65a; //Success
+@aqua: #00c0ef; //Info
+@yellow: #f39c12; //Warning
+@blue: #0073b7;
+@gray: #eaeaec;
+
 #dashboardWrapper {
     min-height: 100%;
     height: auto !important;
@@ -38,9 +46,155 @@
         }
     }
 }
+
 #WeddingCtrl {
     .editWedding {
         cursor: pointer;
         margin: 5px;
+    }
+}
+
+#GamesCtrl{
+    .content {
+        color: white;
+        padding: 10px 15px;
+        background: #f9f9f9;
+        overflow: auto;
+
+        .small-box {
+            cursor: default;
+            position: relative;
+            display: block;
+            margin-bottom: 15px;
+
+            // BACKGROUND COLORS
+            &.box-primary {
+                background-color: @light-blue;
+            }
+
+            &.box-info {
+                background-color: @aqua;
+            }
+
+            &.box-warning {
+                background-color: @yellow;
+            }
+
+            &.box-danger {
+                background-color: @red;
+            }
+
+            &.box-success {
+                background-color: @green;
+            }
+
+            &.disabled {
+                opacity: 0.3;
+                cursor: not-allowed;
+
+                .small-box-footer {
+                    visibility: hidden;
+                }
+            }
+
+            > .inner {
+                padding: 10px;
+
+                h3 {
+                    font-size: 38px;
+                    font-weight: bold;
+                    margin: 0px;
+                    white-space: nowrap;
+                    padding: 0;
+                }
+
+                p {
+                    font-weight: normal;
+                    font-size: 15px;
+                    margin: 0px;
+
+                    > small {
+                        display: block;
+                        color: #f9f9f9;
+                        font-size: 13px;
+                        margin-top: 5px;
+                    }
+                }
+
+                h3, p {
+                    z-index: 5px;
+                }
+            }
+
+            > .small-box-footer {
+                text-align: center;
+                padding: 3px 0;
+                color: #fff;
+                color: rgba(255, 255, 255, 0.8);
+                display: block;
+                z-index: 10;
+                background: rgba(0,0,0,0.1);
+                text-decoration: none;
+
+                &:hover {
+                    color: #fff;
+                    background: rgba(0,0,0,0.15);
+                    cursor:pointer;
+                }
+            }
+
+            .icon {
+                position: absolute;
+                top: auto;
+                bottom: 5px;
+                right: 5px;
+                z-index: 0;
+                font-size: 70px;
+                color: rgba(0, 0, 0, 0.15);
+            }
+
+            &:hover {
+                text-decoration: none;
+                color: #f9f9f9;
+                // Animate icons on small box hover
+                .icon {
+                    animation-name: tansformAnimation;
+                    animation-duration: .5s;
+                    animation-iteration-count: 1;
+                    animation-timing-function: ease;
+                    animation-fill-mode: forwards;
+                    -webkit-animation-name: tansformAnimation;
+                    -webkit-animation-duration: .5s;
+                    -webkit-animation-iteration-count: 1;
+                    -webkit-animation-timing-function: ease;
+                    -webkit-animation-fill-mode: forwards;
+                    -moz-animation-name: tansformAnimation;
+                    -moz-animation-duration: .5s;
+                    -moz-animation-iteration-count: 1;
+                    -moz-animation-timing-function: ease;
+                    -moz-animation-fill-mode: forwards;
+                }
+            }
+        }
+
+        @keyframes tansformAnimation {
+            from {
+                font-size: 70px;
+            }
+
+            to {
+                font-size: 90px;
+            }
+        }
+
+        @-webkit-keyframes tansformAnimation {
+            from {
+                font-size: 70px;
+            }
+
+            to {
+                font-size: 90px;
+            }
+        }
     }
 }
