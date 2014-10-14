@@ -1,0 +1,43 @@
+<!-- Scavenger Hunt -->
+<div id="scavengerWrapper" ng-controller="ScavengerCtrl">
+    <button type="" ng-click="addItem()">Add New Item</button>
+
+    <div class="form-group">
+        <label for="itemType">Type</label>
+        <div class="input-group">
+            <div class="btn-group itemType" id="itemType" name="itemType">
+                <button type="button" ng-click "newItem.type = 'Person'" ng-class="{ 'active' : newItem.type == 'Person' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Person'">Person</button>
+                <button type="button" ng-click "newItem.type = 'Place'" ng-class="{ 'active' : newItem.type == 'Place' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Place'">Place</button>
+                <button type="button" ng-click "newItem.type = 'Thing'" ng-class="{ 'active' : newItem.type == 'Thing' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Thing'">Thing</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="itemInstruction">Item Instruction (ex. )</label>
+        <div class="input-group">
+            <input type="text" id="itemInstruction" name="itemInstruction" ng-model="newItem.instruction" value="" placeholder="">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-group">
+            <div ng-repeat="item in newItem.clues" >
+            	Clue #{{item.id}} <input type="text" id="{{item.id}}" value="{{item.clue}}" placeholder="">
+            </div>
+            <button ng-hide="hideAddClue" type="button" ng-click="addClue()"><span class="octicon octicon-plus"></span>Add</button>
+        </div>
+    </div>
+
+
+    <div ng-repeat="item in scavenger.items">
+    	<div>Type: {{item.type}}</div>
+    	<div>Instruction: {{item.instruction}}</div>
+    	<div>Clues
+    		<div ng-repeat="clue in item.clues">
+    			Clue #{{clue.id}}: {{clue.clue}}
+    		</div>
+    	</div>
+    </div>
+
+</div>

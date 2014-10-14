@@ -14,35 +14,24 @@
 
         <section class="content">
             <div class="row">
-
-                <div ng-click="" class="col-lg-6 col-xs-6">
-                    <div class="small-box box-info">
+                <!-- Game Selection -->
+                <div ng-repeat="item in games" ng-click="selectGame(item.template)" class="col-lg-6 col-xs-6">
+                    <div class="small-box {{item.class}}" ng-class="{ 'active': item.template == currGame, 'inactive': (currGame != '' && item.template != currGame) }">
                         <div class="inner">
-                            <h3>Scavenger Hunt</h3>
-                            <p>Find all the items!</p>
+                            <h3>{{item.title}}</h3>
+                            <p>{{item.info}}</p>
                         </div>
-                        <span class="icon octicon octicon-search"></span>
+                        <span class="icon octicon {{item.octicon}}"></span>
                         <a class="small-box-footer">
                             Create <span class="glyphicon glyphicon-plus"></span>
                         </a>
                     </div>
                 </div>
-
-            
-                <div ng-click="" class="col-lg-6 col-xs-6">
-                    <div class="small-box box-success">
-                        <div class="inner">
-                            <h3>Crossword Puzzle</h3>
-                            <p>Who can complete it first?</p>
-                        </div>
-                        <span class="icon octicon octicon-puzzle"></span>
-                        <a class="small-box-footer">
-                            Create <span class="glyphicon glyphicon-plus"></span>
-                        </a>
-                    </div>
-                </div>
-
             </div>
+            
+            <!-- Content -->
+            <div ng-include src="currGameSrc" class="row"></div>
+
         </section>
     </div>
 </div>

@@ -19,8 +19,10 @@ module.exports = function(app) {
   app.use('/auth', require('./auth'));
 
   app.route('/app/:url(guest|member)/*').get(function(req, res) {
+    console.log('Router: Guest|Member');
     var stripped = req.url.split('.')[0];
     var requestedView = path.join('./', stripped);
+    console.log(app.get('appPath') + '/' + requestedView + '.html');
     res.sendfile(app.get('appPath') + '/' + requestedView + '.html');
   });
 

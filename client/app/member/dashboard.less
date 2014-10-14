@@ -56,36 +56,86 @@
 
 #GamesCtrl{
     .content {
-        color: white;
+        color: #000;
         padding: 10px 15px;
         background: #f9f9f9;
         overflow: auto;
 
         .small-box {
+            opacity: 1;
+            color:#fff;
             cursor: default;
             position: relative;
             display: block;
             margin-bottom: 15px;
+            box-shadow: 0px 0px 7px #555;
+            border-radius: 5px;
+
 
             // BACKGROUND COLORS
             &.box-primary {
+                border:1px solid darken(@light-blue, 10%);
                 background-color: @light-blue;
+
+                &.active{
+                    box-shadow: 0px 0px 10px @light-blue;
+                }
+
+                &.inactive{
+                    opacity: 0.6;
+                }
             }
 
             &.box-info {
+                border:1px solid darken(@aqua, 10%);
                 background-color: @aqua;
+
+                &.active{
+                    box-shadow: 0px 0px 10px @aqua;
+                }
+
+                &.inactive{
+                    opacity: 0.6;
+                }
             }
 
             &.box-warning {
+                border:1px solid darken(@yellow, 10%);
                 background-color: @yellow;
+
+                &.active{
+                    box-shadow: 0px 0px 10px @yellow;
+                }
+
+                &.inactive{
+                    opacity: 0.6;
+                }
             }
 
             &.box-danger {
+                border:1px solid darken(@red, 10%);
                 background-color: @red;
+
+                &.active{
+                    box-shadow: 0px 0px 10px @red;
+                }
+
+                &.inactive{
+                    opacity: 0.6;
+                }
             }
 
             &.box-success {
+                border:1px solid darken(@green, 10%);
                 background-color: @green;
+
+                &.active{
+                    box-shadow: 0px 0px 10px @green;
+                }
+
+                &.inactive{
+                    opacity: 0.6;
+                }
             }
 
             &.disabled {
@@ -101,7 +151,7 @@
                 padding: 10px;
 
                 h3 {
-                    font-size: 38px;
+                    font-size: 30px;
                     font-weight: bold;
                     margin: 0px;
                     white-space: nowrap;
@@ -154,6 +204,7 @@
             }
 
             &:hover {
+                opacity: 1 !important;
                 text-decoration: none;
                 color: #f9f9f9;
                 // Animate icons on small box hover
@@ -175,6 +226,7 @@
                     -moz-animation-fill-mode: forwards;
                 }
             }
+
         }
 
         @keyframes tansformAnimation {
