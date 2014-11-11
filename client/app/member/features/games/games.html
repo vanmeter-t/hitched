@@ -15,23 +15,28 @@
         <section class="content">
             <div class="row">
                 <!-- Game Selection -->
-                <div ng-repeat="item in games" ng-click="selectGame(item.template)" class="col-lg-6 col-xs-6">
-                    <div class="small-box {{item.class}}" ng-class="{ 'active': item.template == currGame, 'inactive': (currGame != '' && item.template != currGame) }">
+                <div ng-repeat="item in games" ng-click="selectGame(item.template)" class="col-lg-6 col-xs-6" ng-class="{ 'active': item.template == currGame, 'inactive': (currGame != '' && item.template != currGame) }">
+                    <div class="small-box {{item.class}}">
                         <div class="inner">
                             <h3>{{item.title}}</h3>
                             <p>{{item.info}}</p>
                         </div>
                         <span class="icon octicon {{item.octicon}}"></span>
                         <a class="small-box-footer">
-                            Create <span class="glyphicon glyphicon-plus"></span>
+                            <span class="glyphicon glyphicon-plus"></span> Create
                         </a>
                     </div>
                 </div>
             </div>
             
             <!-- Content -->
-            <div ng-include src="currGameSrc" class="row"></div>
+            <div ng-include src="currGameSrc" ng-hide="currGame == ''" class="row"></div>
+
+            <!-- Existing -->
+            <div ng-show="currGame == ''" class="row well">
+                Existing Games
+            </div>
 
         </section>
+
     </div>
-</div>

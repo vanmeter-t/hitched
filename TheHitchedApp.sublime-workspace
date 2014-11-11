@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"vali",
+				"validationError"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"li",
+				"list-style"
+			],
+			[
+				"sc",
+				"scavenger"
+			],
+			[
+				"input",
+				"input	input - text"
+			],
+			[
+				"gam",
+				"game"
+			],
+			[
 				"use",
 				"userWedding"
 			],
@@ -99,13 +123,33 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "client/app/member/features/games/games.controller.js",
+			"settings":
+			{
+				"buffer_size": 3959,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "client/components/auth/auth.service.js",
+			"settings":
+			{
+				"buffer_size": 4354,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "Packages/LESS-build/LESS.sublime-build",
 	"command_palette":
 	{
-		"height": 47.0,
+		"height": 347.0,
 		"selected_items":
 		[
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -136,41 +180,77 @@
 	},
 	"file_history":
 	[
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/game/game.controller.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/features/game.service.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/games/games.controller.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/games/games.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/user/user.controller.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/auth/auth.service.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/wedding/wedding.controller.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/seed.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/signup/signup.controller.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/login/login.controller.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/features/wedding.service.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/index.html",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/auth/user.service.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/user/index.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/game/game.model.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/games/scavenger.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/game/index.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/wedding/index.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/wedding/wedding.controller.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/app.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/bower.json",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/guest/games.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/wedding/wedding.controller.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/index.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/Gruntfile.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/bower.json",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/login/login.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/dashboard.less",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/login/login.controller.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/wedding/wedding.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/assets/octicons/octicons.less",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/dashboard.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/routes.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/games/test.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/games/gameTmpl/scavengerhunt.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/games/gameTmpl/crosswordpuzzle.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/dashboard.controller.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/main/main.html",
+		"/Users/Trevor/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/app.less",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/user/user.model.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/auth/user.service.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/features/wedding.service.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/wedding/index.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/settings/settings.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/settings/settings.controller.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/signup/signup.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/signup/signup.controller.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/navbar/navbar.controller.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/navbar/navbar.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/app.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/auth/index.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/alert/alert.html",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/admin/admin.controller.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/wedding/wedding.model.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/bower_components/angular-bootstrap/ui-bootstrap-tpls.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/modal/modal.service.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/alert/alert.controller.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/contact/contact.service.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/app.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/node_modules/mongoose/node_modules/mongodb/lib/mongodb/connection/server.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/express.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/node_modules/connect-mongo/node_modules/mongodb/lib/mongodb/connection/server.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/environment/index.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/environment/development.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/seed.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/local.env.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/environment/production.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/environment/test.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/package.json",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/auth/google/index.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/protractor.conf.js",
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/README.txt",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/bower_components/bootstrap/bower.json",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/bower_components/bootstrap/dist/js/bootstrap.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/wedding/wedding.html",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/routes.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/app.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/auth/auth.service.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/navbar/navbar.controller.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/dashboard.controller.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/auth/index.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/user/user.controller.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/user/index.js",
 		"/Users/Trevor/Documents/Programming/Apps/Hitched/app/bower_components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/affix.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/dashboard.html",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/main/main.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/dist/server/config/express.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/TheHitchedApp.sublime-project",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/guest/index.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/auth/local/index.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/signup/signup.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/components/errors/index.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/main/main.less",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/index.js",
@@ -179,33 +259,21 @@
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/guest/guest.controller.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/main/main.controller.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/main/main.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/contact/contact.service.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/admin/admin.html",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/dashboard.less",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/login/login.less",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/navbar/navbar.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/modal/modal.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/modal/modal.less",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/modal/modal.service.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/mongoose-error/mongoose-error.directive.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/alert/alert.html",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/components/alert/alert.controller.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/dashboard.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/photos/photos.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/guests/guests.html",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/games/games.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/member/features/customize/customize.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/guest/about.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/guest/contact.html",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/guest/games.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/guest/guests.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/guest/photos.html",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/admin/admin.controller.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/admin/admin.less",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/admin/admin.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/settings/settings.html",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/settings/settings.controller.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/login/login.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/account/account.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/app/main/main.controller.spec.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/client/navbar.html",
@@ -221,23 +289,14 @@
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/dist/server/config/environment/production.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/dist/server/config/environment/test.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/dist/server/config/local.env.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/environment/development.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/environment/production.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/environment/test.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/local.env.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/wedding/wedding.model.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/location/index.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/game/game.controller.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/location/location.controller.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/dist/package.json",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/e2e/main/main.spec.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/e2e/main/main.po.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/location/location.spec.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/location/location.model.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/game/game.model.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/guest/guest.model.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/user/user.model.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/express.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/views/404.html",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/wedding/wedding.spec.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/user/user.model.spec.js",
@@ -248,22 +307,7 @@
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/thing/thing.model.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/thing/thing.controller.js",
 		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/Location/location.controller.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/Guest/guest.controller.js",
-		"/Users/Trevor/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/environment/index.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/protractor.conf.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/dist/server/config/local.env.sample.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/dist/server/config/environment/index.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/config/local.env.sample.js",
-		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/karma.conf.js",
-		"/Users/Trevor/Documents/Programming/Apps/Hitched/lib/config/env/development.js",
-		"/Users/Trevor/Documents/Programming/Apps/Hitched/lib/models/wedding.js",
-		"/Users/Trevor/Documents/Programming/Apps/Hitched/lib/routes.js",
-		"/Users/Trevor/Documents/Programming/Apps/Hitched/lib/controllers/wedding.js",
-		"/Users/Trevor/Documents/Programming/Apps/Hitched/lib/models/user.js",
-		"/Users/Trevor/Documents/Programming/Apps/Hitched/lib/models/guest.js",
-		"/Users/Trevor/Documents/Programming/Apps/Hitched/lib/models/location.js",
-		"/Users/Trevor/Documents/Programming/Apps/Hitched/bower.json"
+		"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp/server/api/Guest/guest.controller.js"
 	],
 	"find":
 	{
@@ -271,7 +315,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"/Users/Trevor/Documents/Programming/Apps/TheHitchedApp",
@@ -286,6 +330,37 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"itemAnswer",
+			"valid",
+			"opacity",
+			"form-control",
+			"formcontrol",
+			"components",
+			".css",
+			"less",
+			"wedding.update",
+			"modalOpenedDeferred",
+			"){",
+			"modalStack",
+			"tplAndVars",
+			".open",
+			"modal",
+			"open(",
+			".open",
+			"modalInstance",
+			">\n",
+			"app.js",
+			"connectionPool",
+			"connect(",
+			".connect(",
+			".connect",
+			".uri",
+			"NODE_ENV",
+			"environment",
+			"MONGOLAB_URI",
+			"uri",
+			"development.js",
+			"www.",
 			"Session",
 			"user.service.js",
 			"auth.service",
@@ -382,38 +457,7 @@
 			"save",
 			"User",
 			"Session",
-			"Auth",
-			"'User'",
-			"update",
-			"MainCtrl",
-			"  app.get('/api/users/me', users.me);\n  app.get('/api/users/:id', users.show);",
-			"signup.js",
-			"Auth",
-			"updateDetails",
-			"profile",
-			"currentUser",
-			"$scope.user",
-			"$scope.",
-			"currentUser",
-			"row",
-			"saveDetails",
-			"saveDetails(form)",
-			"Please fill out this field",
-			"next",
-			"navbar.js",
-			"NavbarCtrl",
-			"MainCtrl",
-			"update",
-			"{}\n",
-			"update",
-			"page-header",
-			"modal",
-			"robots",
-			"#",
-			"showWeeks",
-			"datepicker",
-			"col-sm-9",
-			"col-sm-12"
+			"Auth"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -421,6 +465,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"answer",
 			"Hitched",
 			"location",
 			"guest",
@@ -470,8 +515,273 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "client/app/member/features/games/games.controller.js",
+					"settings":
+					{
+						"buffer_size": 3959,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3958,
+								3958
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1155.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "client/components/auth/auth.service.js",
+					"settings":
+					{
+						"buffer_size": 4354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3029,
+								3029
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2.0,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5.0,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10.0,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1580.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -524,6 +834,66 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"auth",
+				"client/components/auth/auth.service.js"
+			],
+			[
+				"game",
+				"client/app/member/features/games/games.controller.js"
+			],
+			[
+				"index",
+				"server/api/user/index.js"
+			],
+			[
+				"service",
+				"client/components/auth/auth.service.js"
+			],
+			[
+				"wedding",
+				"server/api/wedding/wedding.controller.js"
+			],
+			[
+				"ga",
+				"client/app/member/features/games/games.html"
+			],
+			[
+				"game.",
+				"server/api/game/game.controller.js"
+			],
+			[
+				"scan",
+				"client/app/member/features/games/scavenger.html"
+			],
+			[
+				"lo",
+				"client/app/account/login/login.html"
+			],
+			[
+				"log",
+				"client/app/account/login/login.html"
+			],
+			[
+				"wed",
+				"client/app/member/features/wedding/wedding.html"
+			],
+			[
+				"login",
+				"client/app/account/login/login.html"
+			],
+			[
+				"we",
+				"client/app/member/features/wedding/wedding.html"
+			],
+			[
+				"wedd",
+				"client/app/member/features/wedding/wedding.controller.js"
+			],
+			[
+				"octi",
+				"client/assets/octicons/octicons.less"
+			]
 		],
 		"width": 0.0
 	},

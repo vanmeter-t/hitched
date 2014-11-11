@@ -1,43 +1,91 @@
 <!-- Scavenger Hunt -->
-<div id="scavengerWrapper" ng-controller="ScavengerCtrl">
-    <button type="" ng-click="addItem()">Add New Item</button>
+<div id="ScavengerCtrl" ng-controller="ScavengerCtrl">
 
-    <div class="form-group">
-        <label for="itemType">Type</label>
-        <div class="input-group">
-            <div class="btn-group itemType" id="itemType" name="itemType">
-                <button type="button" ng-click "newItem.type = 'Person'" ng-class="{ 'active' : newItem.type == 'Person' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Person'">Person</button>
-                <button type="button" ng-click "newItem.type = 'Place'" ng-class="{ 'active' : newItem.type == 'Place' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Place'">Place</button>
-                <button type="button" ng-click "newItem.type = 'Thing'" ng-class="{ 'active' : newItem.type == 'Thing' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Thing'">Thing</button>
+    <div class="row">
+        <div class="col-sm-8">
+            <h3>Directions/Instructions</h3>
+            <p>
+                This is how you set up and play the game...
+            </p>
+        </div>
+        <div class="col-sm-4 scavengerHuntSave">
+            <button class="btn btn-primary btn-md" type="submit" ng-click="saveScavengerHunt()">Save Game</button>
+            <button class="btn btn-danger btn-md" type="submit" ng-click="cancelGame()">Cancel Game</button>
+        </div>
+    </div>
+    <form class="form" name="form" ng-submit="addItem(form)">
+        <div class="row addItem">
+            <div class="form-group col-sm-4">
+                <label for="itemType">Type</label>
+                <div class="input-group">
+                    <div class="btn-group itemType" id="itemType" name="itemType">
+                        <button type="button" ng-click "newItem.type = 'Person'" ng-class="{ 'active' : newItem.type == 'Person' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Person'">Person</button>
+                        <button type="button" ng-click "newItem.type = 'Place'" ng-class="{ 'active' : newItem.type == 'Place' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Place'">Place</button>
+                        <button type="button" ng-click "newItem.type = 'Thing'" ng-class="{ 'active' : newItem.type == 'Thing' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Thing'">Thing</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group col-sm-8">
+                <label for="itemInstruction">Item Instruction (ex. ?)</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="itemInstruction" name="itemInstruction" ng-model="newItem.instruction" value="" placeholder="" required>
+                    <p class="help-block" ng-show="form.itemInstruction.$error.required">
+                        What should they be looking for?
+                    </p>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="form-group">
-        <label for="itemInstruction">Item Instruction (ex. )</label>
-        <div class="input-group">
-            <input type="text" id="itemInstruction" name="itemInstruction" ng-model="newItem.instruction" value="" placeholder="">
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="input-group">
-            <div ng-repeat="item in newItem.clues" >
-            	Clue #{{item.id}} <input type="text" id="{{item.id}}" value="{{item.clue}}" placeholder="">
+        <div class="row addItem">
+            <div class="form-group col-sm-12">
+                <label for="answer">Answer</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="answer" name="answer" ng-model="newItem.answer" value="" placeholder="" required>
+                    <p class="help-block" ng-show="form.answer.$error.required">
+                        What is the answer for this item?
+                    </p>
+                </div>
             </div>
-            <button ng-hide="hideAddClue" type="button" ng-click="addClue()"><span class="octicon octicon-plus"></span>Add</button>
         </div>
-    </div>
+        <div class="row addItem">
+            <div class="form-group col-sm-12">
+                <div class="input-group row">
+                    <div class="addClue col-sm-4" ng-repeat="item in newItem.clues" ng-show="{{$index}} <= clueIdx">
+                        Clue #{{$index+1}}
+                        <input type="text" id="{{$index}}" value="{{item.clue}}" ng-model="item.clue" placeholder="">
+                    </div>
+                    <div class="addClue" ng-show="clueIdx < 2"> <!-- Maximum of 3 clues -->
+                        <button class="btn btn-primary" ng-hide="hideAddClue" type="button" ng-click="addClue()">
+                            <span class="octicon octicon-plus"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row addItem">
+            <div class="col-sm-12 addItemBtn">
+                <button class="btn btn-md btn-success" type="submit">Add Item</button>
+            </div>
+        </div>
+    </form>
 
+    <ul class="scavenger-list">
+        <li ng-repeat="item in scavenger.items">
+            <ul class="scavenger-sublist">
+                <li class="list-header">
+                    <span class="octicon octicon-pencil"  ng-click="editItem({{$index}})"></span>
+                    <span class="octicon octicon-trashcan"  ng-click="deleteItem({{$index}})"></span>
+                    <span class="list-header-info">({{item.type}})</span> {{item.instruction}}
+                </li>
+                <li>
+                    <div>Answer: {{item.answer}}</div>
+                    <div>
+                        Clues:<span ng-repeat="clue in item.clues">{{clue.clue}}<span ng-show="item.clues > ({{$index}} + 1)">, </span></span>
+                    </div>
+                </li>
+            </ul>
+        </li>
+    </ul>
 
-    <div ng-repeat="item in scavenger.items">
-    	<div>Type: {{item.type}}</div>
-    	<div>Instruction: {{item.instruction}}</div>
-    	<div>Clues
-    		<div ng-repeat="clue in item.clues">
-    			Clue #{{clue.id}}: {{clue.clue}}
-    		</div>
-    	</div>
-    </div>
 
 </div>

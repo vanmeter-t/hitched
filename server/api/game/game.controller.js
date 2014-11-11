@@ -30,6 +30,8 @@ exports.show = function(req, res) {
 
 // Creates a new game in the DB.
 exports.create = function(req, res) {
+  console.log('create game type: ' + req.body.type);
+
   Game.create(req.body, function(err, game) {
     if(err) { return handleError(res, err); }
     return res.json(201, game);

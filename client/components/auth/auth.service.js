@@ -114,6 +114,20 @@ angular.module('HitchedApp')
         }).$promise;
       },
 
+      addGame: function(game, callback){
+        var cb = callback || angular.noop;
+
+        return User.addGame({
+          id: currentUser._id
+        }, {
+          game: game
+        }, function(user) {
+          return cb(user);
+        }, function(err) {
+          return cb(err);
+        }).$promise;
+      },
+
       /**
        * Gets all available info on authenticated user
        *

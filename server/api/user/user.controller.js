@@ -105,6 +105,21 @@ exports.changeEmail = function(req, res, next) {
 };
 
 /**
+ * Add game to user
+ */
+exports.addGame = function(req,res,next){
+  var userId = req.user._id;
+  var game = req.body.game;
+  User.findById(userId, function(err,user){
+    user.game.push(game._id);
+    user.save(function(err){
+      if(err) return validationError(res,err);
+      res.send(200);
+    });
+  });
+};
+
+/**
  * Get my info
  */
 exports.me = function(req, res, next) {

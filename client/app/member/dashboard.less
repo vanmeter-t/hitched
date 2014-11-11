@@ -54,102 +54,54 @@
     }
 }
 
-#GamesCtrl{
+#GamesCtrl {
     .content {
         color: #000;
         padding: 10px 15px;
         background: #f9f9f9;
         overflow: auto;
-
+        .inactive {
+            display: none;
+        }
         .small-box {
             opacity: 1;
-            color:#fff;
+            color: #fff;
             cursor: default;
             position: relative;
             display: block;
             margin-bottom: 15px;
             box-shadow: 0px 0px 7px #555;
             border-radius: 5px;
-
-
             // BACKGROUND COLORS
             &.box-primary {
-                border:1px solid darken(@light-blue, 10%);
+                border: 1px solid darken(@light-blue, 10%);
                 background-color: @light-blue;
-
-                &.active{
-                    box-shadow: 0px 0px 10px @light-blue;
-                }
-
-                &.inactive{
-                    opacity: 0.6;
-                }
             }
-
             &.box-info {
-                border:1px solid darken(@aqua, 10%);
+                border: 1px solid darken(@aqua, 10%);
                 background-color: @aqua;
-
-                &.active{
-                    box-shadow: 0px 0px 10px @aqua;
-                }
-
-                &.inactive{
-                    opacity: 0.6;
-                }
             }
-
             &.box-warning {
-                border:1px solid darken(@yellow, 10%);
+                border: 1px solid darken(@yellow, 10%);
                 background-color: @yellow;
-
-                &.active{
-                    box-shadow: 0px 0px 10px @yellow;
-                }
-
-                &.inactive{
-                    opacity: 0.6;
-                }
             }
-
             &.box-danger {
-                border:1px solid darken(@red, 10%);
+                border: 1px solid darken(@red, 10%);
                 background-color: @red;
-
-                &.active{
-                    box-shadow: 0px 0px 10px @red;
-                }
-
-                &.inactive{
-                    opacity: 0.6;
-                }
             }
-
             &.box-success {
-                border:1px solid darken(@green, 10%);
+                border: 1px solid darken(@green, 10%);
                 background-color: @green;
-
-                &.active{
-                    box-shadow: 0px 0px 10px @green;
-                }
-
-                &.inactive{
-                    opacity: 0.6;
-                }
             }
-
             &.disabled {
                 opacity: 0.3;
                 cursor: not-allowed;
-
                 .small-box-footer {
                     visibility: hidden;
                 }
             }
-
             > .inner {
                 padding: 10px;
-
                 h3 {
                     font-size: 30px;
                     font-weight: bold;
@@ -157,12 +109,10 @@
                     white-space: nowrap;
                     padding: 0;
                 }
-
                 p {
                     font-weight: normal;
                     font-size: 15px;
                     margin: 0px;
-
                     > small {
                         display: block;
                         color: #f9f9f9;
@@ -170,12 +120,10 @@
                         margin-top: 5px;
                     }
                 }
-
                 h3, p {
                     z-index: 5px;
                 }
             }
-
             > .small-box-footer {
                 text-align: center;
                 padding: 3px 0;
@@ -183,16 +131,14 @@
                 color: rgba(255, 255, 255, 0.8);
                 display: block;
                 z-index: 10;
-                background: rgba(0,0,0,0.1);
+                background: rgba(0, 0, 0, 0.1);
                 text-decoration: none;
-
                 &:hover {
                     color: #fff;
-                    background: rgba(0,0,0,0.15);
-                    cursor:pointer;
+                    background: rgba(0, 0, 0, 0.15);
+                    cursor: pointer;
                 }
             }
-
             .icon {
                 position: absolute;
                 top: auto;
@@ -202,7 +148,6 @@
                 font-size: 70px;
                 color: rgba(0, 0, 0, 0.15);
             }
-
             &:hover {
                 opacity: 1 !important;
                 text-decoration: none;
@@ -226,27 +171,106 @@
                     -moz-animation-fill-mode: forwards;
                 }
             }
-
         }
-
         @keyframes tansformAnimation {
             from {
                 font-size: 70px;
             }
-
             to {
                 font-size: 90px;
             }
         }
-
         @-webkit-keyframes tansformAnimation {
             from {
                 font-size: 70px;
             }
-
             to {
                 font-size: 90px;
             }
         }
     }
+}
+
+#ScavengerCtrl {
+
+    .help-block{
+        margin-bottom:5px;
+    }
+
+    .form-group{
+        margin-bottom:5px;
+    }
+
+    .addItem {
+        .input-group {
+            width: 100%;
+
+            input {
+                width: 100%;
+            }
+        }
+        .addItemBtn {
+            text-align: center;
+            padding-top: 15px;
+        }
+    }
+    .addClue {
+        display: inline-block;
+        button {
+            margin-top: 20px;
+            height: 20px;
+            width: 20px;
+            font-size: 10px;
+            padding: 1px;
+        }
+    }
+    .scavengerHuntSave {
+        text-align: right;
+    }
+
+    .scavenger-list{
+
+        li{
+            list-style: none;
+        }
+
+        .scavenger-sublist{
+            padding-left:0px;
+
+            .list-header{
+                font-weight: bold;
+                font-size: 15px;
+
+                .list-header-info{
+                    font-weight: bold;
+                    font-size: 12px;
+                    color:#555;
+                }
+
+                .octicon{
+                    margin:0px 5px;
+                    cursor: pointer;
+                    color:#555;
+
+                    &.octicon-pencil{
+                        margin-left:-40px;
+                    }
+
+                    &.octicon-trashcan{
+                        margin-left:-5px;
+                    }
+
+                    &:hover{
+                        color:red;
+                    }
+                }
+            }
+
+            li{
+                list-style: none;
+            }
+        }
+    }
+
+
 }

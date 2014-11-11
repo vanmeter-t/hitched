@@ -6,7 +6,7 @@ angular.module('HitchedApp')
       id: '@_id'
     });
   })
-  .factory('GameInfo', function GameInfo($location, $rootScope, Game) {
+  .factory('GameInfo', function GameInfo($location, $rootScope, Game, User) {
     return {
 
       /**
@@ -19,7 +19,11 @@ angular.module('HitchedApp')
       update: function(updateGame, callback) {
         var cb = callback || angular.noop;
 
-        return Game.save(updateGame, function() {
+        return Game.save(updateGame, function(game) {
+
+          // update the current user with the new game
+          var currentUser = User.get();
+          currentUser.addGame(game);
 
           return cb();
         }, function(err) {

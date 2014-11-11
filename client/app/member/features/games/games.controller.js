@@ -30,18 +30,30 @@ angular.module('HitchedApp')
             'octicon': 'octicon-puzzle'
         }];
 
+        // Fetch the template for the specific game selected
         $scope.selectGame = function(template) {
             $scope.currGame = template;
             $scope.currGameSrc = 'app/member/features/games/' + $scope.currGame;
         };
+
+        $scope.cancelGame = function(){
+            $scope.currGame = '';
+            $scope.currGameSrc = '';
+        };
+
+        $scope.closeGame = function(){
+            $scope.currGame = '';
+            $scope.currGameSrc = '';
+        };
+
     })
     .controller('ScavengerCtrl', function($scope, $location, $modal, $log, Auth, GameInfo) {
         /******************************************************
          * Scavenger Hunt
          ******************************************************/
-
-        var lastClueId = 1;
+        $scope.clueIdx = 0;
         $scope.hideAddClue = false;
+        $scope.submitted = false;
 
         $scope.scavenger = {
             items: []
@@ -50,36 +62,69 @@ angular.module('HitchedApp')
         $scope.newItem = {
             type: '',
             instruction: '',
+            answer: '',
             clues: [{
-                id: 1,
                 clue: ''
             }]
         };
 
-        $scope.addItem = function() {
-            $scope.hideAddClue = false;
-            $scope.scavenger.items.push($scope.newItem);
-            $scope.newItem = {
-                type: '',
-                instruction: '',
-                clues: [{
-                    id: 1,
-                    clue: ''
-                }]
-            };
+        $scope.addItem = function(form) {            
+            if (form.$valid) {
+                $scope.clueIdx = 0;
+                $scope.scavenger.items.push($scope.newItem);
+                $scope.newItem = {
+                    type: '',
+                    instruction: '',
+                    answer: '',
+                    clues: [{
+                        clue: ''
+                    }]
+                };
+            }
         };
 
         $scope.addClue = function() {
-            lastClueId++;
-
-            $scope.newItem.clues.push({
-                id: lastClueId,
-                clue: ''
-            });
-
-            // maximum of 3 clues
-            if (lastClueId === 3) {
-                $scope.hideAddClue = true;
-            }
+            ++$scope.clueIdx;
+            $scope.newItem.clues.push({ clue: ''});
         };
-    });;
+
+
+        // TODO: Encode the information before passing it across
+        $scope.saveScavengerHunt = function() {
+            $log.info('Saving Scavenger Hunt');
+            $scope.submitted = true;
+
+            var updateGame = {
+                type: 'ScavengerHunt',
+                gameInfo: $scope.scavenger
+            };
+
+            GameInfo.update(updateGame).then(function() {
+
+                $scope.submitted = false;
+
+                // TODO: how to modify modal template?
+                // $scope.modalTitle = 'Success!';
+                // $scope.modalBody = 'Your scavenger hunt has been saved!';
+                var modalInstance = $modal.open({
+                    templateUrl: 'components/alert/alert.html',
+                    controller: 'AlertCtrl',
+                    backdrop: false,
+                    windowClass: 'hitched-modal'
+                });
+
+                modalInstance.result.then(function(result) {
+                    if (result && result.template) {
+                        $scope.open(result.template, result.ctrl);
+                    }
+                }, function() {
+                    $log.info('Modal dismissed at: ' + new Date());
+                });
+
+            }).catch(function(err) {
+                err = err.message;
+                $scope.errors.other = err.message;
+            });
+        };
+
+    });

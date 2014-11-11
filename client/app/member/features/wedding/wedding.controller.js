@@ -19,6 +19,8 @@ angular.module('HitchedApp')
       $scope.editWedding = !$scope.editWedding;
     };
 
+    // TODO: Encode the information before passing it across
+
     // Save the wedding information
     $scope.saveWedding = function(form) {
       $log.info('Saving Wedding');

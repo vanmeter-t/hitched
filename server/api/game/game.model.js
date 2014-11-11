@@ -7,8 +7,8 @@ var mongoose = require('mongoose'),
  * Game Schema
  */
 var GameSchema = new Schema({
-  type: Number // can this be changed to an enum?
+  type: String, // can this be changed to an enum?
+  gameInfo: Object
 });
-
 
 module.exports = mongoose.model('Game', GameSchema);
