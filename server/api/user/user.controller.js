@@ -7,7 +7,7 @@ var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
 
 var validationError = function(res, err) {
-  return res.json(422, err);
+    return res.json(422, err);
 };
 
 /**
@@ -15,37 +15,37 @@ var validationError = function(res, err) {
  * restriction: 'admin'
  */
 exports.index = function(req, res) {
-  User.find({}, '-salt -hashedPassword', function(err, users) {
-    if (err) return res.send(500, err);
-    res.json(200, users);
-  });
+    User.find({}, '-salt -hashedPassword', function(err, users) {
+        if (err) return res.send(500, err);
+        res.json(200, users);
+    });
 };
 
 /**
  * Creates a new user
  */
 exports.create = function(req, res, next) {
-  var newUser = new User(req.body);
-  newUser.provider = 'local';
-  newUser.role = 'user';
+    var newUser = new User(req.body);
+    newUser.provider = 'local';
+    newUser.role = 'user';
 
-  // create the wedding for the user
-  var newWedding = new Wedding();
-  newWedding.save(function(err, wedding) {
-    if (err) return validationError(res, err);
-    newUser.wedding = wedding;
-    newUser.save(function(err, user) {
-      if (err) return validationError(res, err);
-      var token = jwt.sign({
-        _id: user._id
-      }, config.secrets.session, {
-        expiresInMinutes: 60 * 5
-      });
-      res.json({
-        token: token
-      });
+    // create the wedding for the user
+    var newWedding = new Wedding();
+    newWedding.save(function(err, wedding) {
+        if (err) return validationError(res, err);
+        newUser.wedding = wedding;
+        newUser.save(function(err, user) {
+            if (err) return validationError(res, err);
+            var token = jwt.sign({
+                _id: user._id
+            }, config.secrets.session, {
+                expiresInMinutes: 60 * 5
+            });
+            res.json({
+                token: token
+            });
+        });
     });
-  });
 
 };
 
@@ -53,13 +53,13 @@ exports.create = function(req, res, next) {
  * Get a single user
  */
 exports.show = function(req, res, next) {
-  var userId = req.params.id;
+    var userId = req.params.id;
 
-  User.findById(userId, function(err, user) {
-    if (err) return next(err);
-    if (!user) return res.send(401);
-    res.json(user.profile);
-  });
+    User.findById(userId, function(err, user) {
+        if (err) return next(err);
+        if (!user) return res.send(401);
+        res.json(user.profile);
+    });
 };
 
 /**
@@ -67,75 +67,79 @@ exports.show = function(req, res, next) {
  * restriction: 'admin'
  */
 exports.destroy = function(req, res) {
-  User.findByIdAndRemove(req.params.id, function(err, user) {
-    if (err) return res.send(500, err);
-    return res.send(204);
-  });
+    User.findByIdAndRemove(req.params.id, function(err, user) {
+        if (err) return res.send(500, err);
+        return res.send(204);
+    });
 };
 
 /**
  * Change a users password
  */
 exports.changePassword = function(req, res, next) {
-  var userId = req.user._id;
-  var newPass = String(req.body.newPassword);
+    var userId = req.user._id;
+    var newPass = String(req.body.newPassword);
 
-  User.findById(userId, function(err, user) {
-      user.password = newPass;
-      user.save(function(err) {
-        if (err) return validationError(res, err);
-        res.send(200);
-      });
-  });
+    User.findById(userId, function(err, user) {
+        user.password = newPass;
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.send(200);
+        });
+    });
 };
 
 /**
  * Change email
  */
 exports.changeEmail = function(req, res, next) {
-  var userId = req.user._id;
-  var email = String(req.body.email);
-  User.findById(userId, function (err, user) {
-    user.email = email;
-    user.save(function(err) {
-      if (err) return validationError(res, err);
-      res.send(200);
+    var userId = req.user._id;
+    var email = String(req.body.email);
+    User.findById(userId, function(err, user) {
+        user.email = email;
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.send(200);
+        });
     });
-  });
 };
 
 /**
  * Add game to user
  */
-exports.addGame = function(req,res,next){
-  var userId = req.user._id;
-  var game = req.body.game;
-  User.findById(userId, function(err,user){
-    user.game.push(game._id);
-    user.save(function(err){
-      if(err) return validationError(res,err);
-      res.send(200);
+exports.linkGames = function(req, res, next) {
+    var userId = req.user._id;
+    var gameObj = req.body.gameObj;
+
+    console.log('adding game to user');
+    User.findById(userId, function(err, user) {
+        console.log('pushing game');
+        user.games.push(gameObj._id);
+
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.send(200);
+        });
     });
-  });
 };
 
 /**
  * Get my info
  */
 exports.me = function(req, res, next) {
-  var userId = req.user._id;
-  User.findOne({
-    _id: userId
-  }, '-salt -hashedPassword', function(err, user) { // don't ever give out the password or salt
-    if (err) return next(err);
-    if (!user) return res.json(401);
-    res.json(user);
-  });
+    var userId = req.user._id;
+    User.findOne({
+        _id: userId
+    }, '-salt -hashedPassword', function(err, user) { // don't ever give out the password or salt
+        if (err) return next(err);
+        if (!user) return res.json(401);
+        res.json(user);
+    });
 };
 
 /**
  * Authentication callback
  */
 exports.authCallback = function(req, res, next) {
-  res.redirect('/');
+    res.redirect('/');
 };

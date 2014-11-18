@@ -17,6 +17,12 @@ angular.module('HitchedApp')
           controller: 'email'
         }
       },
+      linkGames:{
+        method: 'PUT',
+        params: {
+          controller: 'linkGames'
+        }
+      },
       get: {
         method: 'GET',
         params: {

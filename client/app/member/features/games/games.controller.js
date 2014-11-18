@@ -4,19 +4,22 @@ angular.module('HitchedApp')
     .controller('GamesCtrl', function($scope, $location, $modal, $log, Auth, GameInfo) {
         $scope.errors = {};
         $scope.submitted = false;
-        $scope.games = [];
+        $scope.gameTypes = [];
+        $scope.userGames = [];
 
-        // Get the user information
+        // Get the wedding information
         Auth.getCurrentUser().$promise.then(function(user) {
-            $scope.user = user;
-            $scope.userGames = user.games;
+          $scope.user = user;
+          GameInfo.userGames(user.games).promise.then(function(data) {
+            $scope.userGames = data;
+          });
         });
 
         $scope.currGame = '';
         $scope.currGameSrc = '';
 
         // Games
-        $scope.games = [{
+        $scope.gameTypes = [{
             'title': 'Scavenger Hunt',
             'template': 'scavenger',
             'info': 'Find all the items!',
@@ -27,6 +30,12 @@ angular.module('HitchedApp')
             'template': 'crossword',
             'info': 'Who can complete it first?',
             'class': 'box-success',
+            'octicon': 'octicon-puzzle'
+        }, {
+            'title': 'Wedding Anagram',
+            'template': 'anagram',
+            'info': 'Can you unscramble the words?',
+            'class': 'box-warning',
             'octicon': 'octicon-puzzle'
         }];
 
@@ -88,6 +97,13 @@ angular.module('HitchedApp')
             $scope.newItem.clues.push({ clue: ''});
         };
 
+        $scope.editItem = function(index){
+
+        };
+
+        $scope.deleteItem = function(index){
+
+        };
 
         // TODO: Encode the information before passing it across
         $scope.saveScavengerHunt = function() {

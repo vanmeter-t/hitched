@@ -15,7 +15,7 @@
         <section class="content">
             <div class="row">
                 <!-- Game Selection -->
-                <div ng-repeat="item in games" ng-click="selectGame(item.template)" class="col-lg-6 col-xs-6" ng-class="{ 'active': item.template == currGame, 'inactive': (currGame != '' && item.template != currGame) }">
+                <div ng-repeat="item in gameTypes" ng-click="selectGame(item.template)" class="col-lg-6 col-xs-6" ng-class="{ 'active': item.template == currGame, 'inactive': (currGame != '' && item.template != currGame) }">
                     <div class="small-box {{item.class}}">
                         <div class="inner">
                             <h3>{{item.title}}</h3>
@@ -35,6 +35,9 @@
             <!-- Existing -->
             <div ng-show="currGame == ''" class="row well">
                 Existing Games
+                <div ng-repeat="item in userGames" >
+                    <h3>Game: {{item.type}}</h3>
+                </div>
             </div>
 
         </section>

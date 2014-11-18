@@ -114,14 +114,17 @@ angular.module('HitchedApp')
         }).$promise;
       },
 
-      addGame: function(game, callback){
+      linkGames: function(gameObj, callback){
         var cb = callback || angular.noop;
 
-        return User.addGame({
+        return User.linkGames({
           id: currentUser._id
         }, {
-          game: game
+          gameObj: gameObj
         }, function(user) {
+          // Add new game id to user game array
+          console.log('adding game id to user game array');
+          currentUser.games.push(gameObj._id);
           return cb(user);
         }, function(err) {
           return cb(err);
