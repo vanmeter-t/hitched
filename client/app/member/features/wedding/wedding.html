@@ -17,16 +17,19 @@
             <div class="form-group col-lg-7" ng-class="{ 'has-success': form.firstName.$valid && submitted,
                                                     'has-error': form.firstName.$invalid && submitted }">
                 <label for="firstName">Your Name</label>
-                <input type="text" ng-readonly="!editWedding" class="form-control" name="firstName" id="firstName" placeholder="Enter Name" ng-model="wedding.firstName" required>
+                <input type="text" ng-disabled="!editWedding" class="form-control" name="firstName" id="firstName" placeholder="Enter Name" ng-model="wedding.firstName" required>
             </div>
 
             <div class="form-group">
                 <label for="firstAre">You Are</label>
                 <div class="input-group">
-                    <div class="btn-group firstAre" id="firstAre">
+                    <div ng-hide="!editWedding" class="btn-group firstAre" id="firstAre">
                         <button type="button" ng-click "wedding.firstType = 'Bride'" ng-class="{ 'active' : wedding.firstType == 'Bride' }" ng-model="wedding.firstType" class="btn btn-default" btn-radio="'Bride'">Bride</button>
                         <button type="button" ng-click "wedding.firstType = 'Groom'" ng-class="{ 'active' : wedding.firstType == 'Groom' }" ng-model="wedding.firstType" class="btn btn-default" btn-radio="'Groom'">Groom</button>
                         <button type="button" ng-click "wedding.firstType = 'Partner'" ng-class="{ 'active' : wedding.firstType == 'Partner' }" ng-model="wedding.firstType" class="btn btn-default" btn-radio="'Partner'">Partner</button>
+                    </div>
+                    <div ng-hide="editWedding" class="firstAre">
+                        The {{wedding.firstType}}    
                     </div>
                 </div>
             </div>
@@ -40,10 +43,13 @@
                                             'has-error': form.secondName.$invalid && submitted }">
                 <label for="secondAre">Fianc&eacute; Is</label>
                 <div class="input-group">
-                    <div class="btn-group secondAre" id="secondAre">
+                    <div ng-hide="!editWedding" class="btn-group secondAre" id="secondAre">
                         <button type="button" ng-click "wedding.secondType = 'Bride'" ng-class="{ 'active' : wedding.secondType == 'Bride' }" ng-model="wedding.secondType" class="btn btn-default" btn-radio="'Bride'">Bride</button>
                         <button type="button" ng-click "wedding.secondType = 'Groom'" ng-class="{ 'active' : wedding.secondType == 'Groom' }" ng-model="wedding.secondType" class="btn btn-default" btn-radio="'Groom'">Groom</button>
                         <button type="button" ng-click "wedding.secondType = 'Partner'" ng-class="{ 'active' : wedding.secondType == 'Partner' }" ng-model="wedding.secondType" class="btn btn-default" btn-radio="'Partner'">Partner</button>
+                    </div>
+                    <div ng-hide="editWedding" class="secondAre">
+                        The {{wedding.secondType}}    
                     </div>
                 </div>
             </div>
@@ -52,9 +58,8 @@
                 <label for="InputWeddingDate">Wedding Date</label>
                 <p class="input-group">
                     <input type="text" ng-readonly="!editWedding" class="form-control" show-weeks="false" datepicker-popup="MM/dd/yyyy" show-button-bar="false" ng-model="wedding.dateTime" is-open="opened" min="minDate" max="'2015-06-22'" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
-                    <span class="input-group-btn">
-                        <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i>
-                        </button>
+                    <span ng-hide="!editWedding" class="input-group-btn">
+                        <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
                     </span>
                 </p>
             </div>
@@ -64,20 +69,21 @@
                 <input type="text" ng-readonly="!editWedding" class="form-control" name="unlockCode" id="unlockCode" ng-model="wedding.unlockCode" required>
                 <span style="color:#555; font-size:13px;">(Used by your guests to access this app)</span>
             </div>
+        </div>
+        <hr class="featurette-divider hidden-lg">
+        
+        <a ng-hide="editWedding" class="btn btn-md btn-primary editWedding pull-right" ng-click="editWeddingInit()">Edit</a>
+        <a ng-show="editWedding" class="btn btn-md btn-danger editWedding pull-right" ng-click="editWeddingInit()">Cancel</a>
+        <button ng-hide="submitted || !editWedding" class="btn btn-md btn-primary pull-right editWedding" type="submit">Save</button>
 
-            <a ng-hide="editWedding" class="btn btn-md btn-primary editWedding pull-right" ng-click="editWeddingInit()">Edit</a>
-            <a ng-show="editWedding" class="btn btn-md btn-danger editWedding pull-right" ng-click="editWeddingInit()">Cancel</a>
-            <button ng-hide="submitted || !editWedding" class="btn btn-md btn-primary pull-right editWedding" type="submit">Save</button>
+        <div class="col-lg-5 col-md-push-1">
+            <address>
+                <h3><span title="Search for the location." class="glyphicon glyphicon-search"></span> Wedding Location</h3>
+                <p class="lead">
+                    Place Name
+                    <br>Address</a>
+                    <br>Phone: XXX-XXX-XXXX
+            </address>
         </div>
     </form>
-    <hr class="featurette-divider hidden-lg">
-    <div class="col-lg-5 col-md-push-1">
-        <address>
-            <h3><span title="Search for the location." class="glyphicon glyphicon-search"></span> Wedding Location</h3>
-            <p class="lead">
-                Place Name
-                <br>Address</a>
-                <br>Phone: XXX-XXX-XXXX
-        </address>
-    </div>
 </div>

@@ -23,6 +23,10 @@
                         <button type="button" ng-click "newItem.type = 'Place'" ng-class="{ 'active' : newItem.type == 'Place' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Place'">Place</button>
                         <button type="button" ng-click "newItem.type = 'Thing'" ng-class="{ 'active' : newItem.type == 'Thing' }" ng-model="newItem.type" class="btn btn-default" btn-radio="'Thing'">Thing</button>
                     </div>
+                    <input type="hidden" id="itemType" name="itemType" ng-model="newItem.type" value="" placeholder="" required>
+                    <p class="help-block" ng-show="form.itemType.$error.required">
+                        What is the item?
+                    </p>
                 </div>
             </div>
 
@@ -64,7 +68,7 @@
         </div>
         <div class="row addItem">
             <div class="col-sm-12 addItemBtn">
-                <button class="btn btn-md btn-success" type="submit">Add Item</button>
+                <button class="btn btn-md btn-success" type="submit"><span ng-hide="editing">Add</span><span ng-hide="!editing">Update</span> Item</button>
             </div>
         </div>
     </form>
@@ -73,7 +77,7 @@
         <li ng-repeat="item in scavenger.items">
             <ul class="scavenger-sublist">
                 <li class="list-header">
-                    <span class="octicon octicon-pencil"  ></span><!-- ng-click="editItem({{$index}})" -->
+                    <span class="octicon octicon-pencil" ng-click="editItem($index)"></span>
                     <span class="octicon octicon-trashcan"  ></span><!-- ng-click="deleteItem({{$index}})" -->
                     <span class="list-header-info">({{item.type}})</span> {{item.instruction}}
                 </li>
