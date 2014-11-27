@@ -3,18 +3,10 @@
         <h1>Games</h1>
     </div>
     <div class="col-md-12">
-        <div class="alert alert-success" style="display:none;">
-            <strong>
-                <span class="glyphicon glyphicon-send"></span>Success!</strong>
-        </div>
-        <div class="alert alert-danger" style="display:none;">
-            <span class="glyphicon glyphicon-alert"></span>
-            <strong>Error!</strong>
-        </div>
-
         <section class="content">
+
+            <!-- Game Selection -->
             <div class="row">
-                <!-- Game Selection -->
                 <div ng-repeat="item in gameTypes" ng-click="selectGame(item.template)" class="col-lg-6 col-xs-6" ng-class="{ 'active': item.template == currGame, 'inactive': (currGame != '' && item.template != currGame) }">
                     <div class="small-box {{item.class}}">
                         <div class="inner">
@@ -23,23 +15,28 @@
                         </div>
                         <span class="icon octicon {{item.octicon}}"></span>
                         <a class="small-box-footer">
-                            <span class="glyphicon glyphicon-plus"></span> Create
+                            <span class="glyphicon glyphicon-plus"></span>Create
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Content -->
             <div ng-include src="currGameSrc" ng-hide="currGame == ''" class="row"></div>
 
-            <!-- Existing -->
+            <!-- Existing Saved Games -->
             <div ng-show="currGame == ''" class="row well">
                 Existing Games
-                <div ng-repeat="item in userGames" >
-                    <h3>Game: {{item.type}}</h3>
+                <div ng-repeat="item in userGames">
+                    <ul class="game-sublist">
+                        <li class="list-header">
+                            <span class="octicon octicon-pencil" ng-click="editGame($index)"></span>
+                            <span class="octicon octicon-trashcan" ng-click="deleteGame($index)"></span>
+                            <span class="list-header-info">{{item.type}}</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
         </section>
-
     </div>

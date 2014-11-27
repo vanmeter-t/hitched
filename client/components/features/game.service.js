@@ -6,31 +6,46 @@ angular.module('HitchedApp')
             id: '@_id'
         });
     })
-    .factory('GameInfo', function GameInfo($location, $rootScope, $q, Game, Auth) {
+    .factory('GameInfo', function GameInfo($q, Auth, Game) {
         return {
 
             /**
              * Upsert game
              *
-             * @param  {Object}   game  - game info
+             * @param  {Object}   gameObj  - game object
              * @param  {Function} callback - optional
              * @return {Promise}
              */
-            update: function(updateGame, callback) {
+            update: function(gameObj, callback) {
                 var cb = callback || angular.noop;
-
-                return Game.save(updateGame, function(newGame) {
-                    console.log('game saved, update user');
-
-                    console.log(newGame);
+                return Game.save(gameObj, function(newGame) {
                     Auth.linkGames(newGame).then(function() {
-                        console.log('game added to user.');
+                        console.log('game saved, updated user games');
                         return cb();
                     });
-
                 }, function(err) {
                     return cb(err);
                 }).$promise;
+            },
+
+            /**
+             * Remove game
+             *
+             * @param  {Object}   gameObj  - game object
+             * @param  {Function} callback - optional
+             * @return {Promise}
+             */
+            remove: function(gameObj, callback) {
+                var cb = callback || angulary.noop;
+                return Game.delete(gameObj, function() {
+                    Auth.removeGame(gameObj).then(function() {
+                        console.log('game removed, updated user games');
+                        return cb();
+                    });
+                }, function(err) {
+                    return cb(err);
+                }).$promise;
+
             },
 
             /**
@@ -49,14 +64,14 @@ angular.module('HitchedApp')
                         id: gameIds[i]
                     }, function(gameObj) {
                         userGames.push(gameObj);
-                    }, function(err){
+                    }, function(err) {
 
                     }).$promise);
                 }
 
                 var promise = $q.all(allPromises);
 
-                promise.then(function(){
+                promise.then(function() {
                     deferred.resolve(userGames);
                 });
 

@@ -10,16 +10,23 @@ angular.module('HitchedApp')
     Auth.getCurrentUser().$promise.then(function(user) {
       $scope.user = user;
       WeddingInfo.userWedding(user.wedding).$promise.then(function(data) {
+
+        // Load the wedding information into the scope
         $scope.wedding = data;
       });
     });
 
     // Switch to edit mode
     $scope.editWeddingInit = function() {
-      $scope.editWedding = !$scope.editWedding;
+      $scope.editWedding = true;
     };
 
-    // TODO: Encode the information before passing it across
+    // Cancel out of edit mode
+    $scope.cancelWeddingInit = function(){
+      $scope.editWedding = false;
+    }
+
+    // TODO: Encode the information before passing it across?
 
     // Save the wedding information
     $scope.saveWedding = function(form) {

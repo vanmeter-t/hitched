@@ -113,9 +113,21 @@ exports.linkGames = function(req, res, next) {
 
     console.log('adding game to user');
     User.findById(userId, function(err, user) {
-        console.log('pushing game');
         user.games.push(gameObj._id);
+        user.save(function(err) {
+            if (err) return validationError(res, err);
+            res.send(200);
+        });
+    });
+};
 
+exports.removeGame = function(req, res, next) {
+    var userId = req.user._id;
+    var gameObj = req.body.gameObj;
+
+    console.log('removed game from user');
+    User.findById(userId, function(err, user) {
+        user.games.splice(user.games.indexOf(gameObj._id),1);
         user.save(function(err) {
             if (err) return validationError(res, err);
             res.send(200);

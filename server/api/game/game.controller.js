@@ -30,7 +30,8 @@ exports.show = function(req, res) {
 
 // Creates a new game in the DB.
 exports.create = function(req, res) {
-  console.log('create game type: ' + req.body.type);
+  console.log('created game:');
+  console.log(req.body);
 
   Game.create(req.body, function(err, game) {
     if(err) { return handleError(res, err); }
@@ -40,7 +41,14 @@ exports.create = function(req, res) {
 
 // Updates an existing game in the DB.
 exports.update = function(req, res) {
-  if(req.body._id) { delete req.body._id; }
+  console.log('updated game:');
+  console.log(req.body);
+
+  // not sure what this is doing
+  if(req.body._id) { 
+    delete req.body._id; 
+  }
+  
   Game.findById(req.params.id, function (err, game) {
     if (err) { return handleError(res, err); }
     if(!game) { return res.send(404); }
@@ -54,6 +62,9 @@ exports.update = function(req, res) {
 
 // Deletes a game from the DB.
 exports.destroy = function(req, res) {
+  console.log('deleted game:');
+  console.log(req.body);
+
   Game.findById(req.params.id, function (err, game) {
     if(err) { return handleError(res, err); }
     if(!game) { return res.send(404); }

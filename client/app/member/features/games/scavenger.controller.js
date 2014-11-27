@@ -5,10 +5,11 @@ angular.module('HitchedApp')
         /******************************************************
          * Scavenger Hunt
          ******************************************************/
+        $scope.editing = false;
+        $scope.submitted = false;
+
         $scope.clueIdx = 0;
         $scope.hideAddClue = false;
-        $scope.submitted = false;
-        $scope.editing = false;
 
         $scope.scavenger = {
             items: []
@@ -23,11 +24,14 @@ angular.module('HitchedApp')
             }]
         };
 
-        $scope.addItem = function(form) {            
+        $scope.addItem = function(form) {
             if (form.$valid) {
+                
+                // push the new item and reset our newItem in the scope
+                $scope.scavenger.items.push($scope.newItem);
+
                 $scope.clueIdx = 0;
                 $scope.editing = false;
-                $scope.scavenger.items.push($scope.newItem);
                 $scope.newItem = {
                     type: '',
                     instruction: '',
@@ -41,19 +45,21 @@ angular.module('HitchedApp')
 
         $scope.addClue = function() {
             ++$scope.clueIdx;
-            $scope.newItem.clues.push({ clue: ''});
+            $scope.newItem.clues.push({ clue: '' });
         };
 
-        $scope.editItem = function(index){
+        $scope.editItem = function(index) {
             // set item as current 'edit' item and remove from saved array
             $scope.newItem = $scope.scavenger.items[index];
             $scope.clueIdx = $scope.newItem.clues.length;
-            $scope.scavenger.items.splice(index,1);
+            $scope.scavenger.items.splice(index, 1);
             $scope.editing = true;
         };
 
-        $scope.deleteItem = function(index){
-            $scope.scavenger.items.splice(index,1);
+        $scope.deleteItem = function(index) {
+            if (confirm('Are you sure you want to delete this?')) {
+                $scope.scavenger.items.splice(index, 1);
+            }
         };
 
         // TODO: Encode the information before passing it across

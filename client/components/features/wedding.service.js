@@ -6,13 +6,13 @@ angular.module('HitchedApp')
       id: '@_id'
     });
   })
-  .factory('WeddingInfo', function WeddingInfo($location, $rootScope, Wedding) {
+  .factory('WeddingInfo', function WeddingInfo(Wedding) {
     return {
 
       /**
        * Upsert wedding
        *
-       * @param  {Object}   wedding  - wedding info
+       * @param  {Object}   updateWedding  - wedding object
        * @param  {Function} callback - optional
        * @return {Promise}
        */

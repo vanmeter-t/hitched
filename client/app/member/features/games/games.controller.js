@@ -2,23 +2,12 @@
 
 angular.module('HitchedApp')
     .controller('GamesCtrl', function($scope, $location, $modal, $log, Auth, GameInfo) {
-        $scope.errors = {};
-        $scope.submitted = false;
-        $scope.gameTypes = [];
-        $scope.userGames = [];
-
-        // Get the wedding information
-        Auth.getCurrentUser().$promise.then(function(user) {
-          $scope.user = user;
-          GameInfo.userGames(user.games).promise.then(function(data) {
-            $scope.userGames = data;
-          });
-        });
-
+        
         $scope.currGame = '';
         $scope.currGameSrc = '';
+        $scope.userGames = [];
 
-        // Games
+        // Games offered 
         $scope.gameTypes = [{
             'title': 'Scavenger Hunt',
             'template': 'scavenger',
@@ -39,10 +28,28 @@ angular.module('HitchedApp')
             'octicon': 'octicon-puzzle'
         }];
 
+        // Get the wedding information
+        // Get the user's existing games
+        // Add the existing games to the scope 
+        Auth.getCurrentUser().$promise.then(function(user) {
+          $scope.user = user;
+          GameInfo.userGames(user.games).promise.then(function(data) {
+            $scope.userGames = data;
+          });
+        });
+
         // Fetch the template for the specific game selected
         $scope.selectGame = function(template) {
             $scope.currGame = template;
             $scope.currGameSrc = 'app/member/features/games/' + $scope.currGame;
+        };
+
+        $scope.editGame = function(gameIdx){
+
+        };
+
+        $scope.deleteGame = function(gameIdx){
+
         };
 
         $scope.cancelGame = function(){
