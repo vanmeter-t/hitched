@@ -19,9 +19,9 @@
                 <label for="itemType">Type</label>
                 <div class="input-group">
                     <div class="btn-group itemType" ng-class="{ 'has-success': form.type.$valid && submitted,'has-error': form.type.$invalid && submitted }">
-                        <button type="button" ng-click="newItem.type = 'Person'" ng-class="{ 'active' : newItem.type == 'Person' }" class="btn btn-default" btn-radio="'Person'">Person</button>
-                        <button type="button" ng-click="newItem.type = 'Place'" ng-class="{ 'active' : newItem.type == 'Place' }" class="btn btn-default" btn-radio="'Place'">Place</button>
-                        <button type="button" ng-click="newItem.type = 'Thing'" ng-class="{ 'active' : newItem.type == 'Thing' }" class="btn btn-default" btn-radio="'Thing'">Thing</button>
+                        <button type="button" ng-model="newItem.type" ng-click="newItem.type = 'Person'" ng-class="{ 'active' : newItem.type == 'Person' }" class="btn btn-default" btn-radio="'Person'">Person</button>
+                        <button type="button" ng-model="newItem.type" ng-click="newItem.type = 'Place'" ng-class="{ 'active' : newItem.type == 'Place' }" class="btn btn-default" btn-radio="'Place'">Place</button>
+                        <button type="button" ng-model="newItem.type" ng-click="newItem.type = 'Thing'" ng-class="{ 'active' : newItem.type == 'Thing' }" class="btn btn-default" btn-radio="'Thing'">Thing</button>
                         <input type="hidden" id="type" name="type" ng-model="newItem.type" required/>
                     </div>
                     <p class="help-block" ng-show="form.type.$error.required"> 

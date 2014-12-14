@@ -17,35 +17,52 @@ angular.module('HitchedApp')
              * @return {Promise}
              */
             update: function(gameObj, callback) {
+                var deferred = $q.defer();
                 var cb = callback || angular.noop;
-                return Game.save(gameObj, function(newGame) {
-                    Auth.linkGames(newGame).then(function() {
-                        console.log('game saved, updated user games');
-                        return cb();
+
+                if (typeof gameObj._id !== 'undefined') {
+
+                } else {
+                    // TODO: need this promise to wait for the 'linkGames' call
+                    Game.save(gameObj, function(newGame) {
+                        Auth.linkGames(newGame).then(function() {
+                            console.log('game saved, updated user games');
+                            deferred.resolve();
+                            return cb();
+                        });
+                    }, function(err) {
+                        deferred.resolve();
+                        return cb(err);
                     });
-                }, function(err) {
-                    return cb(err);
-                }).$promise;
+                }
+
+                return deferred.promise;
             },
 
             /**
              * Remove game
              *
-             * @param  {Object}   gameObj  - game object
+             * @param  {Object}   gameId  - game id
              * @param  {Function} callback - optional
              * @return {Promise}
              */
             remove: function(gameObj, callback) {
-                var cb = callback || angulary.noop;
-                return Game.delete(gameObj, function() {
+                var deferred = $q.defer();
+                var cb = callback || angular.noop;
+                // TODO: need this promise to wait for the 'linkGames' call
+                Game.delete({
+                    id: gameObj._id
+                }, function() {
                     Auth.removeGame(gameObj).then(function() {
                         console.log('game removed, updated user games');
+                        deferred.resolve();
                         return cb();
                     });
                 }, function(err) {
+                    deferred.resolve();
                     return cb(err);
-                }).$promise;
-
+                });
+                return deferred.promise;
             },
 
             /**
@@ -56,7 +73,6 @@ angular.module('HitchedApp')
              */
             userGames: function(gameIds) {
                 var deferred = $q.defer();
-
                 var userGames = [];
                 var allPromises = [];
                 for (var i = 0; i < gameIds.length; i++) {
@@ -65,17 +81,16 @@ angular.module('HitchedApp')
                     }, function(gameObj) {
                         userGames.push(gameObj);
                     }, function(err) {
-
+                        console.log(err);
                     }).$promise);
                 }
 
                 var promise = $q.all(allPromises);
-
                 promise.then(function() {
                     deferred.resolve(userGames);
                 });
 
-                return deferred;
+                return deferred.promise;
             }
         };
     });

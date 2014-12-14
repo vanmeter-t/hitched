@@ -23,6 +23,12 @@ angular.module('HitchedApp')
           controller: 'linkGames'
         }
       },
+      removeGame:{
+        method: 'PUT',
+        params: {
+          controller: 'removeGame'
+        }
+      },
       get: {
         method: 'GET',
         params: {

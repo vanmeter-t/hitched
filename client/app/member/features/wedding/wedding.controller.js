@@ -10,10 +10,17 @@ angular.module('HitchedApp')
     Auth.getCurrentUser().$promise.then(function(user) {
       $scope.user = user;
       WeddingInfo.userWedding(user.wedding).$promise.then(function(data) {
-
+        
         // Load the wedding information into the scope
-        $scope.wedding = data;
-      });
+        $scope.wedding = data; 
+
+        // If nothing is completed, start off in edit mode
+        if(typeof data.firstName === 'undefined'){
+          $scope.editWedding = true;
+          $scope.wedding.firstName = $scope.user.name;
+        }
+
+      }, function(){}, function(){});
     });
 
     // Switch to edit mode
@@ -24,7 +31,7 @@ angular.module('HitchedApp')
     // Cancel out of edit mode
     $scope.cancelWeddingInit = function(){
       $scope.editWedding = false;
-    }
+    };
 
     // TODO: Encode the information before passing it across?
 

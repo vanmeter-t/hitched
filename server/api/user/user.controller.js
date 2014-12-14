@@ -127,7 +127,7 @@ exports.removeGame = function(req, res, next) {
 
     console.log('removed game from user');
     User.findById(userId, function(err, user) {
-        user.games.splice(user.games.indexOf(gameObj._id),1);
+        user.games.splice(user.games.indexOf(gameObj),1);
         user.save(function(err) {
             if (err) return validationError(res, err);
             res.send(200);

@@ -15,6 +15,11 @@ angular.module('HitchedApp')
             items: []
         };
 
+        $scope.updateGame = {
+            type: 'scavengerhunt',
+            gameInfo: $scope.scavenger
+        };
+
         $scope.newItem = {
             type: '',
             instruction: '',
@@ -23,6 +28,11 @@ angular.module('HitchedApp')
                 clue: ''
             }]
         };
+
+        // load the current game index to be edited
+        if($scope.currGameEditId !== ''){
+            $scope.updateGame = $scope.findGameById($scope.currGameEditId);
+        }
 
         $scope.addItem = function(form) {
             if (form.$valid) {
@@ -57,9 +67,9 @@ angular.module('HitchedApp')
         };
 
         $scope.deleteItem = function(index) {
-            if (confirm('Are you sure you want to delete this?')) {
-                $scope.scavenger.items.splice(index, 1);
-            }
+            // if (confirm('Are you sure you want to delete this?')) {
+            //     $scope.scavenger.items.splice(index, 1);
+            // }
         };
 
         // TODO: Encode the information before passing it across
@@ -67,12 +77,8 @@ angular.module('HitchedApp')
             $log.info('Saving Scavenger Hunt');
             $scope.submitted = true;
 
-            var updateGame = {
-                type: 'ScavengerHunt',
-                gameInfo: $scope.scavenger
-            };
-
-            GameInfo.update(updateGame).then(function() {
+            $scope.updateGame.gameInfo = $scope.scavenger;
+            GameInfo.update($scope.updateGame, $scope.closeGame).then(function() {
 
                 $scope.submitted = false;
 
@@ -93,7 +99,6 @@ angular.module('HitchedApp')
                 }, function() {
                     $log.info('Modal dismissed at: ' + new Date());
                 });
-
             }).catch(function(err) {
                 err = err.message;
                 $scope.errors.other = err.message;

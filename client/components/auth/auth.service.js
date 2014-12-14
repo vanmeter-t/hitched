@@ -136,7 +136,7 @@ angular.module('HitchedApp')
 
                 return User.removeGame({
                     id: currentUser._id
-                }, {
+                }, { 
                     gameObj: gameObj
                 }, function(user) {
                     // Remove game id from user game array

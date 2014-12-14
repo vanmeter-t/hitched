@@ -23,9 +23,9 @@
                 <label for="firstAre">You Are</label>
                 <div class="input-group">
                     <div ng-hide="!editWedding" class="btn-group firstAre" ng-class="{ 'has-success': form.firstAre.$valid && submitted,'has-error': form.firstAre.$invalid && submitted }">
-                        <button type="button" ng-click="wedding.firstType = 'Bride'" ng-class="{ 'active' : wedding.firstType == 'Bride' }" class="btn btn-default" btn-radio="'Bride'">Bride</button>
-                        <button type="button" ng-click="wedding.firstType = 'Groom'" ng-class="{ 'active' : wedding.firstType == 'Groom' }" class="btn btn-default" btn-radio="'Groom'">Groom</button>
-                        <button type="button" ng-click="wedding.firstType = 'Partner'" ng-class="{ 'active' : wedding.firstType == 'Partner' }" class="btn btn-default" btn-radio="'Partner'">Partner</button>
+                        <button type="button" ng-model="wedding.firstType" ng-click="wedding.firstType = 'Bride'" ng-class="{ 'active' : wedding.firstType == 'Bride' }" class="btn btn-default" btn-radio="'Bride'">Bride</button>
+                        <button type="button" ng-model="wedding.firstType" ng-click="wedding.firstType = 'Groom'" ng-class="{ 'active' : wedding.firstType == 'Groom' }" class="btn btn-default" btn-radio="'Groom'">Groom</button>
+                        <button type="button" ng-model="wedding.firstType" ng-click="wedding.firstType = 'Partner'" ng-class="{ 'active' : wedding.firstType == 'Partner' }" class="btn btn-default" btn-radio="'Partner'">Partner</button>
                         <input type="hidden" id="firstAre" name="firstAre" ng-model="wedding.firstType" required />
                     </div>
                     <div ng-hide="editWedding" class="firstAre">
@@ -44,9 +44,9 @@
                 <label for="secondAre">Fianc&eacute; Is</label>
                 <div class="input-group">
                     <div ng-hide="!editWedding" class="btn-group secondAre" ng-class="{ 'has-success': form.secondAre.$valid && submitted,'has-error': form.secondAre.$invalid && submitted }">
-                        <button type="button" ng-click="wedding.secondType = 'Bride'" ng-class="{ 'active' : wedding.secondType == 'Bride' }" class="btn btn-default" btn-radio="'Bride'">Bride</button>
-                        <button type="button" ng-click="wedding.secondType = 'Groom'" ng-class="{ 'active' : wedding.secondType == 'Groom' }" class="btn btn-default" btn-radio="'Groom'">Groom</button>
-                        <button type="button" ng-click="wedding.secondType = 'Partner'" ng-class="{ 'active' : wedding.secondType == 'Partner' }" class="btn btn-default" btn-radio="'Partner'">Partner</button>
+                        <button type="button" ng-model="wedding.secondType" ng-click="wedding.secondType = 'Bride'" ng-class="{ 'active' : wedding.secondType == 'Bride' }" class="btn btn-default" btn-radio="'Bride'">Bride</button>
+                        <button type="button" ng-model="wedding.secondType" ng-click="wedding.secondType = 'Groom'" ng-class="{ 'active' : wedding.secondType == 'Groom' }" class="btn btn-default" btn-radio="'Groom'">Groom</button>
+                        <button type="button" ng-model="wedding.secondType" ng-click="wedding.secondType = 'Partner'" ng-class="{ 'active' : wedding.secondType == 'Partner' }" class="btn btn-default" btn-radio="'Partner'">Partner</button>
                         <input type="hidden" id="secondAre" name="secondAre" ng-model="wedding.secondType" required />
                     </div>
                     <div ng-hide="editWedding" class="secondAre">
