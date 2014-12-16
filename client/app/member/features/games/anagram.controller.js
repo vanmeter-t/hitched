@@ -5,7 +5,7 @@ angular.module('HitchedApp')
         /******************************************************
          * Anagram
          ******************************************************/
-        
+
         $scope.anagram = {};
         $scope.submitted = false;
 
@@ -23,20 +23,25 @@ angular.module('HitchedApp')
 
                 $scope.submitted = false;
 
-                // TODO: how to modify modal template?
-                // $scope.modalTitle = 'Success!';
-                // $scope.modalBody = 'Your anagram game has been saved!';
                 var modalInstance = $modal.open({
                     templateUrl: 'components/alert/alert.html',
                     controller: 'AlertCtrl',
-                    backdrop: false,
-                    windowClass: 'hitched-modal'
+                    windowClass: 'hitched-modal',
+                    resolve: {
+                        alertTitle: function() {
+                            return 'Success!';
+                        },
+                        alertBody: function() {
+                            return 'Your anagram game has been saved!';
+                        },
+                        alertClass: function() {
+                            return 'alert-success';
+                        }
+                    }
                 });
 
                 modalInstance.result.then(function(result) {
-                    if (result && result.template) {
-                        $scope.open(result.template, result.ctrl);
-                    }
+
                 }, function() {
                     $log.info('Modal dismissed at: ' + new Date());
                 });

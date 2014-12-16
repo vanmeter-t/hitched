@@ -5,7 +5,6 @@
 
 'use strict';
 
-var Location = require('../api/location/location.model');
 var Game = require('../api/game/game.model');
 var Guest = require('../api/guest/guest.model');
 var Wedding = require('../api/wedding/wedding.model');

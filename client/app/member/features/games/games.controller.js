@@ -81,20 +81,26 @@ angular.module('HitchedApp')
 
             var tempGame = $scope.findGameById(gameId);
             GameInfo.remove(tempGame, pullUserGames).then(function() {
-                // TODO: how to modify modal template?
-                // $scope.modalTitle = 'Game Removed!';
-                // $scope.modalBody = 'Your game has been deleted!';
                 var modalInstance = $modal.open({
                     templateUrl: 'components/alert/alert.html',
                     controller: 'AlertCtrl',
-                    backdrop: false,
-                    windowClass: 'hitched-modal'
+                    windowClass: 'hitched-modal',
+                        resolve: {
+                            alertTitle: function() {
+                                return 'Game Removed.';
+                            },
+                            alertBody: function() {
+                                return 'The game has been deleted.';
+                            },
+                        alertClass: function() {
+                            return 'alert-danger';
+                        }
+                        }
+
                 });
 
                 modalInstance.result.then(function(result) {
-                    if (result && result.template) {
-                        $scope.open(result.template, result.ctrl);
-                    }
+
                 }, function() {
                     $log.info('Modal dismissed at: ' + new Date());
                 });

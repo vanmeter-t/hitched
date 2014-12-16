@@ -1,11 +1,12 @@
 'use strict';
 
-angular.module('HitchedApp')
-  .controller('AlertCtrl', function($scope, $modalInstance) {
+angular.module('HitchedApp').controller('AlertCtrl', function($scope, $modalInstance, alertTitle, alertBody, alertClass) {
 
-    console.log($modalInstance);
+	$scope.alertTitle = alertTitle;
+	$scope.alertBody = alertBody;
+	$scope.alertClass = alertClass;
+
     $scope.close = function() {
-      console.log($modalInstance);
-      $modalInstance.close();
+        $modalInstance.close();
     };
-  });
+});

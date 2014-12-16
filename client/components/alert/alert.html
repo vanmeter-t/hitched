@@ -1,11 +1,8 @@
-<div class="hitched-alert alert alert-success">
+<div class="hitched-alert alert {{alertClass}}">
     <div class="row">
-        <div class="col-sm-12 modalHeader">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close()">&times;</button>
-            <h2 data-modal="title" ng-model="modalTitle">Modal Title</h2>
-        </div>
-        <div data-modal="body" class="col-sm-12">
-            <p ng-model="modalBody">Modal Body</p>
+        <div data-modal="body" class="col-sm-12 hitched-alert-body">
+        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="close()">&times;</button>
+            <h3 class="hitched-alert-title" data-modal="title">{{alertTitle}}</h3>{{alertBody}}
         </div>
     </div>
 </div>

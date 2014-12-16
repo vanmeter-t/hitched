@@ -14,7 +14,7 @@ var WeddingSchema = new Schema({
   secondType: String,
   dateTime: Date,
   unlockCode: String,
-  location: { type: Schema.ObjectId, ref: 'Location' },
+  location: String,
   guestList: [ GuestSchema ]
 });
 

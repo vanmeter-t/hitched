@@ -5,7 +5,7 @@ angular.module('HitchedApp')
         /******************************************************
          * Crossword
          ******************************************************/
-        
+
         $scope.crossword = {};
         $scope.submitted = false;
 
@@ -22,21 +22,25 @@ angular.module('HitchedApp')
             GameInfo.update(updateGame).then(function() {
 
                 $scope.submitted = false;
-
-                // TODO: how to modify modal template?
-                // $scope.modalTitle = 'Success!';
-                // $scope.modalBody = 'Your crossword puzzle has been saved!';
                 var modalInstance = $modal.open({
                     templateUrl: 'components/alert/alert.html',
                     controller: 'AlertCtrl',
-                    backdrop: false,
-                    windowClass: 'hitched-modal'
+                    windowClass: 'hitched-modal',
+                    resolve: {
+                        alertTitle: function() {
+                            return 'Success!';
+                        },
+                        alertBody: function() {
+                            return 'Your crossword puzzle has been saved!';
+                        },
+                        alertClass: function() {
+                            return 'alert-success';
+                        }
+                    }
                 });
 
                 modalInstance.result.then(function(result) {
-                    if (result && result.template) {
-                        $scope.open(result.template, result.ctrl);
-                    }
+
                 }, function() {
                     $log.info('Modal dismissed at: ' + new Date());
                 });

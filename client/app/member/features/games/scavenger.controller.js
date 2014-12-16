@@ -30,13 +30,13 @@ angular.module('HitchedApp')
         };
 
         // load the current game index to be edited
-        if($scope.currGameEditId !== ''){
+        if ($scope.currGameEditId !== '') {
             $scope.updateGame = $scope.findGameById($scope.currGameEditId);
         }
 
         $scope.addItem = function(form) {
             if (form.$valid) {
-                
+
                 // push the new item and reset our newItem in the scope
                 $scope.scavenger.items.push($scope.newItem);
 
@@ -55,7 +55,9 @@ angular.module('HitchedApp')
 
         $scope.addClue = function() {
             ++$scope.clueIdx;
-            $scope.newItem.clues.push({ clue: '' });
+            $scope.newItem.clues.push({
+                clue: ''
+            });
         };
 
         $scope.editItem = function(index) {
@@ -82,20 +84,25 @@ angular.module('HitchedApp')
 
                 $scope.submitted = false;
 
-                // TODO: how to modify modal template?
-                // $scope.modalTitle = 'Success!';
-                // $scope.modalBody = 'Your scavenger hunt has been saved!';
                 var modalInstance = $modal.open({
                     templateUrl: 'components/alert/alert.html',
                     controller: 'AlertCtrl',
-                    backdrop: false,
-                    windowClass: 'hitched-modal'
+                    windowClass: 'hitched-modal',
+                    resolve: {
+                        alertTitle: function() {
+                            return 'Success!';
+                        },
+                        alertBody: function() {
+                            return 'Your scavenger hunt has been saved!';
+                        },
+                        alertClass: function() {
+                            return 'alert-success';
+                        }
+                    }
                 });
 
                 modalInstance.result.then(function(result) {
-                    if (result && result.template) {
-                        $scope.open(result.template, result.ctrl);
-                    }
+
                 }, function() {
                     $log.info('Modal dismissed at: ' + new Date());
                 });
