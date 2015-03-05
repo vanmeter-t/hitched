@@ -15,7 +15,7 @@
         <div class="row">
 
             <!-- Features Menu -->
-            <div class="features col-sm-2">
+            <div class="features col-sm-2" ng-class="{ 'hidden': currFeature == 'welcome' }">
                 <div id="sidebarL" class="affix">
                     <div class="header">
                         <ul class="nav nav-pills pull-right">
@@ -31,7 +31,7 @@
             </div>
 
             <!-- Content -->
-            <div class="container col-sm-10 dashboardSection">
+            <div class="container dashboardSection" ng-class="{ 'col-sm-12': currFeature == 'welcome', 'col-sm-10': currFeature != 'welcome' }">
                 <div ng-include src="currFeatureSrc" class="row"></div>
             </div>
 

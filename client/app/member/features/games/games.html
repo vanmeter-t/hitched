@@ -7,15 +7,15 @@
 
             <!-- Game Selection -->
             <div class="row">
-                <div ng-repeat="item in gameTypes | orderBy:gameOrder" ng-click="selectGame(item.template)" class="col-lg-6 col-xs-6" ng-class="{ 'active': item.template == currGame, 'inactive': (currGame != '' && item.template != currGame) }">
+                <div ng-repeat="item in gameTypes | orderBy:gameOrder" class="col-lg-6 col-xs-6" ng-class="{ 'active': item.template == currGame, 'inactive': (currGame != '' && item.template != currGame) }">
                     <div class="small-box {{item.class}}">
                         <div class="inner">
                             <h3>{{item.title}}</h3>
                             <p>{{item.info}}</p>
                         </div>
                         <span class="icon octicon {{item.octicon}}"></span>
-                        <a class="small-box-footer">
-                            <span class="glyphicon glyphicon-plus"></span>Create
+                        <a ng-click="addGame(item.template)" class="small-box-footer">
+                            <span class="glyphicon glyphicon-plus"></span>Add Game
                         </a>
                     </div>
                 </div>
