@@ -11,31 +11,25 @@
 
     <div class="divider"></div>
 
-    <div class="container">
-        <div class="row">
-
-            <!-- Features Menu -->
-            <div class="features col-sm-2" ng-class="{ 'hidden': currFeature == 'welcome' }">
-                <div id="sidebarL" class="affix">
-                    <div class="header">
-                        <ul class="nav nav-pills pull-right">
-                            <li ng-repeat="item in features" ng-class="{ 'active': item.template == currFeature }">
-                                <a href="" ng-click="selectFeature(item.template)">
-                                    <img ng-src="item.img" width="75px" height="75px" />
-                                    <br />{{item.title}}
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+    <!-- Features Menu -->
+    <div class="features col-sm-2" ng-class="{ 'hidden': currFeature == 'welcome' }">
+        <div id="sidebarL" class="affix">
+            <div class="header">
+                <ul class="nav nav-pills pull-right">
+                    <li ng-repeat="item in features" ng-class="{ 'active': item.template == currFeature }">
+                        <a href="" ng-click="selectFeature(item.template)">
+                            <img ng-src="item.img" width="75px" height="75px" />
+                            <br />{{item.title}}
+                        </a>
+                    </li>
+                </ul>
             </div>
-
-            <!-- Content -->
-            <div class="container dashboardSection" ng-class="{ 'col-sm-12': currFeature == 'welcome', 'col-sm-10': currFeature != 'welcome' }">
-                <div ng-include src="currFeatureSrc" class="row"></div>
-            </div>
-
         </div>
+    </div>
+
+    <!-- Content -->
+    <div class="container dashboardSection" ng-class="{ 'col-sm-12': currFeature == 'welcome', 'col-sm-10': currFeature != 'welcome' }">
+        <div ng-include src="currFeatureSrc" class="row"></div>
     </div>
 
 </div>
