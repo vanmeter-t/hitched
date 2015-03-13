@@ -1,7 +1,24 @@
 <div ng-controller="MainCtrl" id="mainWrapper">
 
     <!-- Header Video/Into Media -->
-    <header id="header"></header>
+    <div class="mainHeader">
+        <div class="container mainContainer">
+            <div class="row">
+                <div class="mainBody col-md-12">
+                    <h1 class="titles">Hitched</h1>
+                    <p class="text-muted">because you're going to be</p>  <!-- need a better catch phrase -->
+
+                    <div>    
+                        <a ng-hide="isLoggedIn()" href="" ng-click="open('signup', 'SignupCtrl')" class="btn btn-default">Get Started</a>
+                    </div>
+
+                    <div class="loginBody">
+                        <a ng-hide="isLoggedIn()" href="" ng-click="open('login', 'LoginCtrl')">Have an account?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="social_share_buttons_id">
         <div class="twitter_cls"></div>
@@ -10,10 +27,10 @@
     </div>
 
     <!-- Fixed navbar -->
-    <div ng-include="'components/navbar/navbar.html'" class="navbar navbar-inverse" id="nav" affix></div>
-
+<!--     <div ng-include="'components/navbar/navbar.html'" class="navbar navbar-inverse" id="nav" affix></div>  -->
+    
     <!-- ABOUT APP -->
-    <div class="divider" id="aboutSection"></div>
+<!--     <div class="divider" id="aboutSection"></div>  -->    
     <div ng-include="'app/guest/about'" class="container"></div>
     <div class="divider"></div>
 
@@ -27,8 +44,8 @@
     <div ng-include="'app/guest/games'" class="row"></div>
     <div class="divider"></div>
 
-    <!-- BACKGROUND 2 -->
-    <section class="bg-2">
+    <!-- BACKGROUND 5 -->
+    <section class="bg-5">
         <div class="col-sm-6 col-sm-offset-3 text-center"></div>
     </section>
 
@@ -37,8 +54,8 @@
     <div ng-include="'app/guest/photos'" class="row"></div>
     <div class="divider"></div>
 
-    <!-- BACKGROUND 4 -->
-    <section class="bg-4">
+    <!-- BACKGROUND 5 -->
+    <section class="bg-5">
         <div class="col-sm-6 col-sm-offset-3 text-center"></div>
     </section>
 
@@ -61,7 +78,7 @@
 
 <div id="footer">
     <div class="container">
-        <p class="text-muted">The Hitched App - Copyright ©2014</p>
+        <p class="text-muted">The Hitched App - Copyright ©<span id="copyrightYear"></span></p>
     </div>
 </div>
 
@@ -71,7 +88,5 @@
 </ul>
 
 <script type="text/javascript">
-// on init, make the video header the height of the window 
-// so the user doesn't see the sections below 
-$("#header").css('height', $(window).height());
+$("#copyrightYear").text(new Date().getFullYear());
 </script>
