@@ -10,13 +10,8 @@
         </div>
     </div>
 
-    <!-- BACKGROUND 1 -->
-    <section class="bg-2">
-        <div class="col-sm-6 col-sm-offset-3 text-center"></div>
-    </section>
-
     <!-- WELCOME -->
-    <div class="container">
+    <div>
         <h2>Ready to get Hitched?!</h2>
         <div class="row">
          Let's get started with setting up your personalized wedding app!
@@ -31,8 +26,7 @@
                                 <p>{{item.info}}</p>
                             </div>
                             <span class="icon octicon {{item.octicon}}"></span>
-                            <a ng-click="selectFeature(item.template)" class="small-box-footer">
-                                
+                            <a ng-click="selectFeature(item.template, item.idx)" class="small-box-footer">
                                 <span class="glyphicon glyphicon-plus"></span>{{item.button}}
                             </a>
                         </div>
@@ -42,9 +36,6 @@
         </form>
     </div>
 
-    <!-- BACKGROUND 1 -->
-    <section class="bg-3">
-        <div class="col-sm-6 col-sm-offset-3 text-center"></div>
-    </section>
+   
 
 </div>

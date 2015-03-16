@@ -7,12 +7,14 @@
 @yellow: #f39c12; //Warning
 @blue: #0073b7;
 @gray: #eaeaec;
+
 #dashboardWrapper {
     min-height: 100%;
     height: auto !important;
     height: 100%;
     margin: 0 auto -40px;
     padding: 0 0 40px;
+
     header {
         width: 100%;
         height: 700px;
@@ -42,6 +44,142 @@
         margin: 5px 0 10px;
         h1 {
             margin-top: 5px
+        }
+    }
+
+    // TOP BACKGROUND
+    .bg-2 {
+        height: 300px !important;
+        min-height: 300px !important;
+        background: url('../../assets/images/4.jpg') no-repeat top center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    // BOTTOM BACKGROUND
+    .bg-3 {
+        background: url('../../assets/images/4.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+
+    .dashboardSection{
+          min-height: 350px;
+          height: 30vh;
+          padding: 0px;
+          margin: 0px !important;
+          text-align: center;
+          width: 100vw;
+
+        header {
+            width: 100%;
+            height: 700px;
+            background: #2e2e2e repeat center bottom;
+        }
+        section {
+            color: #ffffff;
+            min-height: 200px;
+            height: auto !important;
+            height: 100%;
+            padding-top: 100px;
+        }
+        .divider {
+            height: 20px;
+        }
+        .container .credit {
+            margin: 20px 0;
+        }
+        > .container {
+            padding: 0px;
+        }
+        .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        /* ---------------- MEDIA --------------- */
+
+        .content {
+            color: #000;
+            padding: 10px 15px;
+            background: #f9f9f9;
+            overflow: auto;
+            .inactive {
+                display: none;
+            }
+        }
+
+        .left-box, .right-box {
+            text-align: center;
+            vertical-align: middle;
+            padding: 0px;
+            display: block;
+            z-index: 10;
+            height:100%;                            
+            // background: rgba(0, 0, 0, 0.1);
+
+            a{
+                position:relative;
+                top:200px;
+                font-size:40px;
+                color: #ddd !important;
+                color: rgba(255, 255, 255, 0.8); 
+                text-decoration: none;
+            }
+
+            &:hover {
+                a{
+                    color: #888 !important;
+                    cursor: pointer;
+                    // background: rgba(0, 0, 0, 0.15);
+                }
+            }
+            
+            .glyphicon{
+                padding-right:5px;
+            }
+        }
+
+        .slide-animate-container {
+          position:relative;
+          background:white;
+          border:1px solid black;
+          height:40px;
+          overflow:hidden;
+        }
+
+        .slide-animate {
+          padding:10px;
+        }
+
+        .slide-animate.ng-enter, .slide-animate.ng-leave {
+          -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+          transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+
+          position:absolute;
+          top:0;
+          left:0;
+          right:0;
+          bottom:0;
+          display:block;
+          padding:10px;
+        }
+
+        .slide-animate.ng-enter {
+          top:-50px;
+        }
+        .slide-animate.ng-enter.ng-enter-active {
+          top:0;
+        }
+
+        .slide-animate.ng-leave {
+          top:0;
+        }
+        .slide-animate.ng-leave.ng-leave-active {
+          top:50px;
         }
     }
 }

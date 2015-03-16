@@ -6,14 +6,14 @@
             <div class="row">
                 <div class="mainBody col-md-12">
                     <h1 class="titles">Hitched</h1>
-                    <p class="text-muted">because you're going to be</p>  <!-- need a better catch phrase -->
+                    <p style="color:#555">because you're going to be</p>  <!-- need a better catch phrase -->
 
                     <div>    
-                        <a ng-hide="isLoggedIn()" href="" ng-click="open('signup', 'SignupCtrl')" class="btn btn-default">Get Started</a>
+                        <a ng-hide="isLoggedIn()" href="" ng-click="open('signup', 'SignupCtrl')" class="btn btn-default">Let's Get Started!</a>
                     </div>
 
                     <div class="loginBody">
-                        <a ng-hide="isLoggedIn()" href="" ng-click="open('login', 'LoginCtrl')">Have an account?</a>
+                        <a class="text-muted" ng-hide="isLoggedIn()" href="" ng-click="open('login', 'LoginCtrl')">Have an account?</a>
                     </div>
                 </div>
             </div>
