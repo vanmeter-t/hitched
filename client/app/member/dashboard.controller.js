@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('HitchedApp') //, ['ngAnimate']
+angular.module('HitchedApp')
   .controller('DashboardCtrl', function($scope) {
 
     $scope.idx = 0;

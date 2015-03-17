@@ -5,6 +5,7 @@ angular.module('HitchedApp', [
         'ngResource',
         'ngSanitize',
         'ngRoute',
+        'ngAnimate',
         'ui.bootstrap'
     ])
     .config(function($routeProvider, $locationProvider, $httpProvider) {
