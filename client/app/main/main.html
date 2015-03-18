@@ -5,6 +5,10 @@
         <div class="container mainContainer">
             <div class="row">
                 <div class="mainBody col-md-12">
+                    <div class="loginBody">
+                        <a class="text-muted" ng-hide="isLoggedIn()" href="" ng-click="open('login', 'LoginCtrl')">Have an account?</a>
+                    </div>
+
                     <h1 class="titles">Hitched</h1>
                     <p style="color:#555">because you're going to be</p>  <!-- need a better catch phrase -->
 
@@ -12,8 +16,8 @@
                         <a ng-hide="isLoggedIn()" href="" ng-click="open('signup', 'SignupCtrl')" class="btn btn-default">Let's Get Started!</a>
                     </div>
 
-                    <div class="loginBody">
-                        <a class="text-muted" ng-hide="isLoggedIn()" href="" ng-click="open('login', 'LoginCtrl')">Have an account?</a>
+                    <div class="aboutBody">
+                        <a class="text-muted" ng-click="scrollToAbout()">Learn More <i class="glyphicon glyphicon-chevron-down"></i></a>
                     </div>
                 </div>
             </div>
@@ -31,7 +35,7 @@
     
     <!-- ABOUT APP -->
 <!--     <div class="divider" id="aboutSection"></div>  -->    
-    <div ng-include="'app/guest/about'" class="container"></div>
+    <div id="about" ng-include="'app/guest/about'" class="container"></div>
     <div class="divider"></div>
 
     <!-- BACKGROUND 1 -->

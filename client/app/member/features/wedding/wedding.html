@@ -1,7 +1,11 @@
 <div id="WeddingCtrl" ng-controller="WeddingCtrl">
     <div class="row">
     <div class="page-header text-center">
-        <h1>Wedding Info</h1>
+        Wedding Info
+        
+        <a ng-hide="editWedding" class="btn btn-md btn-primary editWedding pull-right" ng-click="editWeddingInit()">Edit</a>
+        <a ng-show="editWedding" class="btn btn-md btn-danger editWedding pull-right" ng-click="cancelWeddingInit()">Cancel</a>
+        <button ng-hide="submitted || !editWedding" class="btn btn-md btn-primary editWedding pull-right" type="submit">Save</button>
     </div>
     <div class="col-md-12">
         <div class="alert alert-success" style="display:none;">
@@ -15,13 +19,13 @@
     </div>
     <form class="form" name="form" ng-submit="saveWedding(form)">
         <div class="row">
-            <div class="col-lg-8" style="margin-top:25px;">
-                <div class="form-group col-lg-7" ng-class="{ 'has-success': form.firstName.$valid && submitted,'has-error': form.firstName.$invalid && submitted }">
+            <div class="col-md-5" style="margin-top:25px; padding:0px;">
+                <div class="form-group col-lg-6" ng-class="{ 'has-success': form.firstName.$valid && submitted,'has-error': form.firstName.$invalid && submitted }">
                     <label for="firstName">Your Name</label>
                     <input type="text" ng-disabled="!editWedding" class="form-control" name="firstName" id="firstName" placeholder="Enter Name" ng-model="wedding.firstName" required>
                 </div>
 
-                <div class="form-group col-lg-5">
+                <div class="form-group col-lg-6">
                     <label for="firstAre">You Are</label>
                     <div class="input-group">
                         <div ng-hide="!editWedding" class="btn-group firstAre" ng-class="{ 'has-success': form.firstAre.$valid && submitted,'has-error': form.firstAre.$invalid && submitted }">
@@ -36,12 +40,12 @@
                     </div>
                 </div>
 
-                <div class="form-group col-lg-7">
+                <div class="form-group col-lg-6">
                     <label for="secondName">Fianc&eacute; Name</label>
                     <input type="text" ng-readonly="!editWedding" class="form-control" name="secondName" id="secondName" ng-model="wedding.secondName" placeholder="Enter Name" required>
                 </div>
 
-                <div class="form-group col-lg-5" ng-class="{ 'has-success': form.secondName.$valid && submitted,
+                <div class="form-group col-lg-6" ng-class="{ 'has-success': form.secondName.$valid && submitted,
                                             'has-error': form.secondName.$invalid && submitted }">
                     <label for="secondAre">Fianc&eacute; Is</label>
                     <div class="input-group">
@@ -70,13 +74,13 @@
                 <div class="form-group col-lg-7" ng-class="{ 'has-success': form.unlockCode.$valid && submitted,'has-error': form.unlockCode.$invalid && submitted }">
                     <label for="unlockCode">Wedding Code</label>
                     <input type="text" ng-readonly="!editWedding" class="form-control" name="unlockCode" id="unlockCode" ng-model="wedding.unlockCode" required>
-                    <span style="color:#555; font-size:13px;">(Used by your guests to access this app)</span>
+                    <span style="color:#555; font-size:13px;">(Guest Access Code)</span>
                 </div>
             </div>
 
             <hr class="featurette-divider hidden-lg">
 
-            <div class="col-lg-4">
+            <div class="col-md-3" style="padding:0px;">
                 <h3><span title="Search for the location." class="glyphicon glyphicon-search"></span> Wedding Location</h3>
                 <div ng-show="editWedding">
                     <input ng-model="chosenPlace" style="width:250px; font-size:16px; margin-bottom:10px;" googleplace/>
@@ -90,18 +94,12 @@
                     <a target="_blank" href="{{googleplaceURL}}" title="View Location">Location Info</a>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12">
+
+            <div class="col-md-4" style="padding:0px;">
                 <div id="map-canvas"></div>
             </div>
         </div>
-
-        <hr class="featurette-divider hidden-lg">
-
-        <a ng-hide="editWedding" class="btn btn-md btn-primary editWedding pull-right" ng-click="editWeddingInit()">Edit</a>
-        <a ng-show="editWedding" class="btn btn-md btn-danger editWedding pull-right" ng-click="cancelWeddingInit()">Cancel</a>
-        <button ng-hide="submitted || !editWedding" class="btn btn-md btn-primary pull-right editWedding" type="submit">Save</button>
+        
 
     </form>
 </div>

@@ -7,9 +7,14 @@ angular.module('HitchedApp')
     
     // Add action for the 'scrollTop' element 
     $scope.scrollTop = function() {
-      $location.hash('/');
       $('body').animate({
         scrollTop: 0
+      }, 'slow');
+    };
+
+    $scope.scrollToAbout = function(){
+      $('body').animate({
+        scrollTop: $("#about").position().top
       }, 'slow');
     };
 
