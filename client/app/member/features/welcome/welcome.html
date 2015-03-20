@@ -12,14 +12,16 @@
 
     <!-- WELCOME -->
     <div>
-        <h2>Ready to get Hitched?!</h2>
-        <div class="row">
-         Let's get started with setting up your personalized wedding app!
+        <div class="page-header text-center">  
+            Ready to get Hitched?!
+            <p class="text-muted">
+                Continue setting up your personalized wedding app!
+            </p>
         </div>
          <form class="form" name="form">
             <section class="content">
                 <div class="row">      
-                    <div ng-repeat="item in features" class="col-lg-6 col-xs-6">
+                    <div ng-repeat="item in features | filter: { idx: '!0' }" class="col-lg-6 col-xs-6">
                         <div class="small-box {{item.class}}">
                             <div class="inner">
                                 <h3>{{item.title}}</h3>

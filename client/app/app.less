@@ -1,12 +1,12 @@
+
+/* ---------------- THIRD PARTY STYLES --------------- */
 @import 'bootstrap/less/bootstrap.less';
 @import 'font-awesome/less/font-awesome.less';
 @icon-font-path: '/bower_components/bootstrap/fonts/';
 @fa-font-path: '/bower_components/font-awesome/fonts';
 @import url(http://fonts.googleapis.com/css?family=Lato:100,400);
 
-/**
- * App-wide Styles
- */
+/* ---------------- SITE-WIDE STYLES --------------- */
 
 html, body {
     height: 100%;
@@ -15,12 +15,10 @@ html, body {
     // font-family: 'Shadows Into Light', cursive;
 }
 
-h1 {
-    font-size: 50px;
-}
 .form-control{
     color:#000 !important;
 }
+
 .browsehappy {
     margin: 0.2em 0;
     background: #ccc;
@@ -28,7 +26,7 @@ h1 {
     padding: 0.2em 0;
 }
 
-#social_share_buttons_id {
+.social-share-btns {
     width: 62px;
     height: 180px;
     position: fixed;
@@ -62,32 +60,6 @@ h1 {
     }
 }
 
-// injector
-@import 'account/login/login.less';
-@import 'admin/admin.less';
-@import 'main/main.less';
-@import 'member/dashboard.less';
-@import 'member/features/games/games.less';
-@import 'member/features/games/scavenger.less';
-@import 'member/features/wedding/wedding.less';
-@import 'member/features/welcome/welcome.less';
-@import '/client/assets/octicons/octicons.less';
-@import 'modal/modal.less';
-// endinjector
-
-/* ---------------- LEFT SUBMENU --------------- */
-
-#sidebarL {
-    width: 150px;
-    height:100vh;
-    text-align: center;
-    ul {
-        li {
-            width: 100%;
-            margin: 0px auto;
-        }
-    }
-}
 /* --------------- NAVBAR --------------- */
 
 #nav {
@@ -120,6 +92,8 @@ h1 {
         }
     }
 }
+
+
 /* ---------------- MODALS --------------- */
 
 .modal {
@@ -195,3 +169,18 @@ h1 {
         color: #444;
     }
 }
+
+/* ---------------- UTILITIES --------------- */
+@import 'modal/modal.less';
+
+/* ---------------- MAIN PAGE --------------- */
+@import 'main/main.less';
+@import 'admin/admin.less';
+@import 'account/login/login.less';
+
+/* ---------------- DASHBOARD --------------- */
+@import 'member/dashboard.less';
+
+/* ---------------- THIRD PARTY --------------- */
+@import '/client/assets/octicons/octicons.less';
+

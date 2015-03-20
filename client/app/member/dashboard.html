@@ -1,59 +1,32 @@
-<div id="dashboardWrapper" ng-Controller="DashboardCtrl">
+<div ng-Controller="DashboardCtrl" class="dashboard-wrapper">
 
-    <div id="social_share_buttons_id">
+    <!-- SHARE SOCIAL APPS -->
+    <div class="social-share-btns">
         <div class="twitter_cls"></div>
         <iframe class="fb_cls" src=""></iframe>
         <div class="pinterest_wrapper_cls"></div>
     </div>
 
-    <!-- Fixed navbar -->
+    <!-- NAVBAR -->
     <div ng-include="'components/navbar/navbar.html'" affix="" class="navbar navbar-inverse" id="nav"></div>
-
     <div class="divider"></div>
 
-    <!-- Features Menu -->
-<!--     <div class="features col-sm-2" ng-class="{ 'hidden': currFeature == 'welcome' }">
-        <div id="sidebarL" class="affix">
-            <div class="header">
-                <ul class="nav nav-pills pull-right">
-                    <li ng-repeat="item in features" ng-class="{ 'active': item.template == currFeature }">
-                        <a href="" ng-click="selectFeature(item.template, item.idx)">
-                            <img ng-src="item.img" width="75px" height="75px" />
-                            <br />{{item.title}}
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div> -->
-
     <!-- BACKGROUND TOP -->
-    <section class="bg-2">
+    <section class="bg-2" ng-class="{'expandFeature' : idx != 0}">
         <div class="col-sm-6 col-sm-offset-3 text-center"></div>
     </section>
 
-    <div class="container dashboardSection">
-        <div class="row" style="height:100%;">
-
-            <!-- BACK ARROW -->
-            <!-- <div ng-click="backFeature()" class="col-sm-1 left-box">
-                <a>
-                    <span class="glyphicon glyphicon-arrow-left"></span>
-                </a>
-            </div> -->
-
-            <!-- CONTENT -->
+    <!-- CONTENT -->
+    <div class="container dashboard-container" ng-class="{'expandFeature' : idx != 0}">
+        <div class="row">
             <div class="col-sm-12">
-                <div class="slide-animate" ng-include src="currFeatureSrc"></div>
+                <div class="dashboard-navigation">
+                    <a ng-repeat="item in features" ng-hide="" class="dashboard-navigation-img pull-left" data-toggle="tooltip" data-placement="bottom" title="{{item.title}}" ng-click="selectFeature(item.template, item.idx)">
+                        <i class="glyphicon {{item.img}}" />
+                    </a>
+                </div>
+                <div ng-include src="currFeatureSrc"></div>
             </div>
-
-            <!-- FORWARD ARROW -->
-            <!-- <div ng-click="nextFeature()" class="col-sm-1 right-box">
-                <a>
-                    <span class="glyphicon glyphicon-arrow-right"></span>
-                </a>
-            </div> -->
-
         </div>
     </div>
 
@@ -61,5 +34,4 @@
     <section class="bg-3">
         <div class="col-sm-6 col-sm-offset-3 text-center"></div>
     </section>
-
 </div>

@@ -1,13 +1,77 @@
-#mainWrapper {
-    min-height: 100%;
-    height: auto !important;
+.main-wrapper {
+
+    width: 100vw;
     height: 100%;
-    margin: 0 auto -40px;
-    padding: 0 0 40px;
-    .titles {
-        font-size: 100px;
-        font-weight: 100 !important;
+
+    // brings the footer up
+    margin-bottom:-40px;
+
+    /* ---------------- FRONT PAGE HEADER --------------- */
+    .main-wrapper-header {
+        width: 100vw;
+        height: 100vh;
+        background: url('../../assets/images/1.jpg') no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+
+        .container {
+            position: relative;
+            top: 200px;
+            width: 60vw;
+            
+            .header-body {
+                text-align: center;
+                background-color: white;
+                border-radius: 10px;
+                padding: 5px;
+            
+                .header-login {
+                    float: right;
+                    cursor: pointer;
+                }
+
+                .header-title{
+                    font-size: 100px;
+                    font-weight: 100 !important;
+                }
+
+                .header-description{
+
+                }
+
+                .header-signup{
+
+                }
+                
+                .header-about {
+                    float: left;
+                    cursor: pointer;
+                    position: relative;
+                    top: 25px;
+
+                    a {
+                        color: #fff;
+                    }
+                }
+        }
+        }
     }
+
+ 
+    /* ---------------- FEATURE SECTIONS --------------- */
+    .divider {
+        height: 50px;
+    } 
+    .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+
+    /* ---------------- MEDIA --------------- */
+    
     section {
         color: #ffffff;
         min-height: 400px;
@@ -15,57 +79,7 @@
         height: 100%;
         padding-top: 100px;
     }
-    .divider {
-        height: 50px;
-    }
-    .container .credit {
-        margin: 20px 0;
-    }
-    > .container {
-        padding: 20px 15px 0;
-    }
-    .row {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
 
-    /* ---------------- MEDIA --------------- */
-    
-    .mainHeader {
-        width: 100%;
-        height: 100vh;
-        // background: #2e2e2e repeat center bottom;
-        background: url('../../assets/images/1.jpg') no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        .mainContainer {
-            position: relative;
-            top: 200px;
-            width: 60vw;
-        }
-        .mainBody {
-            text-align: center;
-            background-color: white;
-            border-radius: 10px;
-            padding-bottom: 5px;
-        }
-        .loginBody {
-            float: right;
-            cursor: pointer;
-        }
-        .aboutBody {
-            float: right;
-            cursor: pointer;
-            position: relative;
-            top: 25px;
-
-            a {
-                color: #fff;
-            }
-        }
-    }
     .bg-1 {
         background: url('../../assets/images/1.jpg') no-repeat center center fixed;
         -webkit-background-size: cover;

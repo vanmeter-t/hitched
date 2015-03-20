@@ -1,20 +1,21 @@
 <div class="row" id="GamesCtrl" ng-controller="GamesCtrl">
     <div class="page-header text-center">
-        <h1>Games</h1>
+        Games
     </div>
     <div class="col-md-12">
         <section class="content">
 
             <!-- Game Selection -->
             <div class="row">
-                <div ng-repeat="item in gameTypes | orderBy:gameOrder" class="col-lg-6 col-xs-6" ng-class="{ 'active': item.template == currGame, 'inactive': (currGame != '' && item.template != currGame) }">
+                <div ng-repeat="item in gameTypes | orderBy:gameOrder" class="col-lg-6 col-xs-6" ng-hide="currGame != ''">
                     <div class="small-box {{item.class}}">
                         <div class="inner">
                             <h3>{{item.title}}</h3>
                             <p>{{item.info}}</p>
                         </div>
                         <span class="icon octicon {{item.octicon}}"></span>
-                        <a ng-click="addGame(item.template)" class="small-box-footer">
+                        <!-- ng-click="addGame(item.template)" -->
+                        <a ng-click="selectGame(item.template)" class="small-box-footer">
                             <span class="glyphicon glyphicon-plus"></span>Add Game
                         </a>
                     </div>

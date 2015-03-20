@@ -3,6 +3,7 @@ angular.module('HitchedApp')
         $scope.errors = {};
         $scope.submitted = false;
         $scope.editWedding = false;
+        $scope.firstEditWedding = true;
         $scope.chosenPlace;
 
         $(window).keydown(function(event) {
@@ -31,6 +32,8 @@ angular.module('HitchedApp')
                 if (typeof data.firstName === 'undefined') {
                     $scope.editWedding = true;
                     $scope.wedding.firstName = $scope.user.name;
+                }else{
+                    $scope.firstEditWedding = false;
                 }
 
                 if (typeof $scope.wedding.location !== 'undefined') {

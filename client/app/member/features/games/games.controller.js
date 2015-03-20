@@ -62,6 +62,11 @@ angular.module('HitchedApp')
         // Add the existing games to the scope 
         pullUserGames();
 
+        // Add the default game setup
+        $scope.addGame = function(template){
+
+        };
+
         // Fetch the template for the specific game selected
         $scope.selectGame = function(template) {
             $scope.currGame = template;

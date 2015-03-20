@@ -1,8 +1,15 @@
 <div id="WeddingCtrl" ng-controller="WeddingCtrl">
     <div class="row">
     <div class="page-header text-center">
-        Wedding Info
+        <span ng-show="!firstEditWedding">Wedding Info</span>
         
+        <span ng-show="firstEditWedding">
+            Ready to get Hitched?!
+            <p class="text-muted">
+             Let's get started with setting up your personalized wedding app!
+            </p>
+        </span>
+
         <a ng-hide="editWedding" class="btn btn-md btn-primary editWedding pull-right" ng-click="editWeddingInit()">Edit</a>
         <a ng-show="editWedding" class="btn btn-md btn-danger editWedding pull-right" ng-click="cancelWeddingInit()">Cancel</a>
         <button ng-hide="submitted || !editWedding" class="btn btn-md btn-primary editWedding pull-right" type="submit">Save</button>

@@ -12,38 +12,38 @@ angular.module('HitchedApp')
     {
       'title': 'Home',
       'template': 'welcome',
-      'img': '',
+      'img': 'glyphicon-home',
       'class': 'box-primary',
       'idx': 0
     },
     {
       'title': 'Wedding Info',
       'template': 'wedding',
-      'img': '',
+      'img': 'glyphicon-info-sign',
       'class': 'box-primary',
       'idx': 1
     }, {
       'title': 'Games',
       'template': 'games',
-      'img': '',
+      'img': 'glyphicon-flag',
       'class': 'box-primary',
       'idx': 2
     }, {
       'title': 'Customize App',
       'template': 'customize',
-      'img': '',
+      'img': 'glyphicon-cog',
       'class': 'box-primary',
       'idx': 3
     },{
       'title': 'Guests',
       'template': 'guests',
-      'img': '',
+      'img': 'glyphicon-user',
       'class': 'box-primary',
       'idx': 4
     },  {
       'title': 'Photos',
       'template': 'photos',
-      'img': '',
+      'img': 'glyphicon-camera',
       'class': 'box-primary',
       'idx': 5
     }];
@@ -70,6 +70,11 @@ angular.module('HitchedApp')
         var nextFeature = $scope.features[backIdx];
         $scope.selectFeature(nextFeature.template, nextFeature.idx);    
       }
+    };
+
+    $scope.homeClick = function(){
+      var nextFeature = $scope.features[0];
+      $scope.selectFeature(nextFeature, 0);
     };
 
   });

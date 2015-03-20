@@ -1,22 +1,22 @@
-<div ng-controller="MainCtrl" id="mainWrapper">
+<div ng-controller="MainCtrl" class="main-wrapper">
 
     <!-- Header Video/Into Media -->
-    <div class="mainHeader">
-        <div class="container mainContainer">
+    <div class="main-wrapper-header">
+        <div class="container">
             <div class="row">
-                <div class="mainBody col-md-12">
-                    <div class="loginBody">
+                <div class="header-body col-md-12">
+                    <div class="header-login">
                         <a class="text-muted" ng-hide="isLoggedIn()" href="" ng-click="open('login', 'LoginCtrl')">Have an account?</a>
                     </div>
 
-                    <h1 class="titles">Hitched</h1>
-                    <p style="color:#555">because you're going to be</p>  <!-- need a better catch phrase -->
+                    <h1 class="header-title">Hitched</h1>
+                    <p class="header-description">because you're going to be</p>  <!-- need a better catch phrase -->
 
-                    <div>    
+                    <div class="header-signup">    
                         <a ng-hide="isLoggedIn()" href="" ng-click="open('signup', 'SignupCtrl')" class="btn btn-default">Let's Get Started!</a>
                     </div>
 
-                    <div class="aboutBody">
+                    <div class="header-about">
                         <a class="text-muted" ng-click="scrollToAbout()">Learn More <i class="glyphicon glyphicon-chevron-down"></i></a>
                     </div>
                 </div>
@@ -24,18 +24,15 @@
         </div>
     </div>
 
-    <div id="social_share_buttons_id">
+    <!-- SHARE SOCIAL APPS -->
+    <div class="social-share-btns">
         <div class="twitter_cls"></div>
         <iframe class="fb_cls" src=""></iframe>
         <div class="pinterest_wrapper_cls"></div>
     </div>
-
-    <!-- Fixed navbar -->
-<!--     <div ng-include="'components/navbar/navbar.html'" class="navbar navbar-inverse" id="nav" affix></div>  -->
     
     <!-- ABOUT APP -->
-<!--     <div class="divider" id="aboutSection"></div>  -->    
-    <div id="about" ng-include="'app/guest/about'" class="container"></div>
+    <div id="about" ng-include="'app/guest/about'" class="row"></div>
     <div class="divider"></div>
 
     <!-- BACKGROUND 1 -->
@@ -44,7 +41,7 @@
     </section>
 
     <!-- GAMES -->
-    <div class="divider" id="gamesSection"></div>
+    <div class="divider"></div>
     <div ng-include="'app/guest/games'" class="row"></div>
     <div class="divider"></div>
 
@@ -54,7 +51,7 @@
     </section>
 
     <!-- PHOTOS -->
-    <div class="divider" id="photosSection"></div>
+    <div class="divider"></div>
     <div ng-include="'app/guest/photos'" class="row"></div>
     <div class="divider"></div>
 
@@ -64,7 +61,7 @@
     </section>
 
     <!-- GUEST LIST -->
-    <div class="divider" id="photosSection"></div>
+    <div class="divider"></div>
     <div ng-include="'app/guest/guests'" class="row"></div>
     <div class="divider"></div>
 
@@ -74,7 +71,7 @@
     </section>
 
     <!-- CONTACT US FORM -->
-    <div class="divider" id="contactSection"></div>
+    <div class="divider"></div>
     <div ng-include="'app/guest/contact'" class="row"></div>
     <div class="divider"></div>
 
@@ -87,7 +84,10 @@
 </div>
 
 <ul id="scroll-top" class="nav pull-right scroll-top">
-    <li><a href="" ng-click="scrollTop()" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a>
+    <li>
+        <a href="" ng-click="scrollTop()" title="Scroll to top">
+            <i class="glyphicon glyphicon-chevron-up"></i>
+        </a>
     </li>
 </ul>
 
