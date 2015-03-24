@@ -13,11 +13,11 @@
 
         <!-- Member -->
         <div ng-show="isLoggedIn()" class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="memberDropDown" data-toggle="dropdown">
-                <span class="glyphicon glyphicon-user" />{{getCurrentUser().name}}
+            <button class="btn btn-default dropdown-toggle" type="button" id="member-dropdown" data-toggle="dropdown">
+                <span class="glyphicon glyphicon-user" /><span id="member-dropdown-name">{{getCurrentUser().name}}</span>
                 <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="memberDropDown">
+            <ul class="dropdown-menu" role="menu" aria-labelledby="member-dropdown">
                 <li role="presentation" ng-repeat="item in member">
                     <a href="{{item.link}}">
                         <span class="glyphicon {{item.glyphicon}}" />{{item.title}}</a>

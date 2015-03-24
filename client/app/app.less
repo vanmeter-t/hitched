@@ -1,22 +1,22 @@
-
 /* ---------------- THIRD PARTY STYLES --------------- */
+
 @import 'bootstrap/less/bootstrap.less';
 @import 'font-awesome/less/font-awesome.less';
 @icon-font-path: '/bower_components/bootstrap/fonts/';
 @fa-font-path: '/bower_components/font-awesome/fonts';
 @import url(http://fonts.googleapis.com/css?family=Lato:100,400);
-
 /* ---------------- SITE-WIDE STYLES --------------- */
 
-html, body {
+html,
+body {
     height: 100%;
     -webkit-font-smoothing: antialiased;
     font-family: 'Lato', sans-serif;
     // font-family: 'Shadows Into Light', cursive;
 }
 
-.form-control{
-    color:#000 !important;
+.form-control {
+    color: #000 !important;
 }
 
 .browsehappy {
@@ -39,7 +39,6 @@ html, body {
     background-color: transparent;
     background-color: rgba(255, 255, 255, 0.2);
     zoom: 1;
-
     .twitter_cls {
         width: 60px;
         height: 20px;
@@ -60,6 +59,11 @@ html, body {
     }
 }
 
+@media(max-width: 650px) {
+    .social-share-btns {
+        display: none !important;
+    }
+}
 /* --------------- NAVBAR --------------- */
 
 #nav {
@@ -91,29 +95,53 @@ html, body {
             height: 1px !important;
         }
     }
+    @media(max-width:650px) {
+        padding: 2px !important;
+        #member-dropdown-name {
+            display: none !important;
+        }
+    }
 }
-
-
 /* ---------------- MODALS --------------- */
 
 .modal {
     display: block;
 }
-.hitched-login, .hitched-signup, .hitched-settings, .hitched-alert {
+
+.hitched-login,
+.hitched-signup,
+.hitched-settings,
+.hitched-alert {
     width: 100%;
     padding: 10px 25px;
     .modalHeader {
         text-align: center;
         h2 {
             margin-top: 10px;
-        
-            &.titles{
-                font-size:50px;
+            &.titles {
+                font-size: 50px;
                 font-weight: 100 !important;
-            }        
+            }
+        }
+    }
+    @media(max-width: 650px) {
+        .titles {
+            font-size: 20px !important;
+        }
+        .fa-text {
+            display: none !important;
+        }
+        .fa-text-small {
+            display: block !important;
+        }
+    }
+    @media(min-width:651px) {
+        .fa-text-small {
+            display: none !important;
         }
     }
 }
+
 .hitched-settings {
     .editSetting {
         // float: right;
@@ -121,6 +149,7 @@ html, body {
         // margin: 5px;
     }
 }
+
 .hitched-modal {
     .modal-content {
         top: -31px;
@@ -129,18 +158,15 @@ html, body {
     }
     .hitched-alert {
         margin-bottom: 0px;
-
-        .hitched-alert-body{
-            font-size:16px;
-            text-align:center;
-
-            .hitched-alert-title{
-                padding-right:15px;
-                display:inline-block;
+        .hitched-alert-body {
+            font-size: 16px;
+            text-align: center;
+            .hitched-alert-title {
+                padding-right: 15px;
+                display: inline-block;
             }
-
-            button{
-                float:right;
+            button {
+                float: right;
             }
         }
     }
@@ -156,6 +182,7 @@ html, body {
         color: #efefef;
     }
 }
+
 #scroll-top {
     position: fixed;
     bottom: 0;
@@ -165,22 +192,21 @@ html, body {
     font-size: 12px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    a :link, .scroll-top a :visited {
+    a:link, .scroll-top a:visited {
         color: #444;
     }
 }
-
 /* ---------------- UTILITIES --------------- */
-@import 'modal/modal.less';
 
+@import 'modal/modal.less';
 /* ---------------- MAIN PAGE --------------- */
+
 @import 'main/main.less';
 @import 'admin/admin.less';
 @import 'account/login/login.less';
-
 /* ---------------- DASHBOARD --------------- */
+
 @import 'member/dashboard.less';
-
 /* ---------------- THIRD PARTY --------------- */
-@import '/client/assets/octicons/octicons.less';
 
+@import '/client/assets/octicons/octicons.less';

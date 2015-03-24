@@ -52,6 +52,16 @@ angular.module('HitchedApp')
       $scope.idx = idx;
       $scope.currFeature = template;
       $scope.currFeatureSrc = 'app/member/features/' + $scope.currFeature + '/' + $scope.currFeature;
+
+      if($scope.idx === 0){
+        $('body').animate({
+          scrollTop: 0
+        }, 'slow');
+      }else{
+        $('body').animate({
+          scrollTop: ($('.dashboard-container').position().top - 50)
+        }, 'slow');
+      }
     };
 
     $scope.nextFeature = function(){
